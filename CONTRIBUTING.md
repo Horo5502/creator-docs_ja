@@ -1,1 +1,1 @@
-Please read the [contribution guide](https://creators.vrchat.com/contribute/) before contributing to the VRChat Creation documentation.
+[http://horo5502.github.io/creator-docs_ja/how-to-contribute]をお読みください。

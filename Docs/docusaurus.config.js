@@ -6,23 +6,16 @@ const darkCodeTheme = require('prism-react-renderer').themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'VRChat Creation',
+  title: 'VRChat CreatorDocs 非公式日本語翻訳',
   tagline: 'Learn, create and share using our tools and documentation.',
-  url: 'https://creators.vrchat.com',
-  baseUrl: '/',
+  url: 'https://horo5502.github.io',
+  baseUrl: '/creator-docs_ja/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico',
-  organizationName: 'vrchat', // Usually your GitHub org/user name.
-  projectName: 'CreatorDocs', // Usually your repo name.
+  organizationName: 'Horo5502', // Usually your GitHub org/user name.
+  projectName: 'creator-docs-ja', // Usually your repo name.
 
-  scripts: [
-    {
-      defer: true,
-      src: 'https://plausible.io/js/script.js',
-      'data-domain': 'creators.vrchat.com'
-    },
-  ],
   presets: [
     [
       'classic',
@@ -31,8 +24,6 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: ({versionDocsDirPath, docPath}) =>
-              `https://github.com/vrchat-community/creator-docs/edit/main/Docs/docs/${docPath}`,
           showLastUpdateTime: true,
         },
         blog: {
@@ -46,6 +37,10 @@ const config = {
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        gtag: {
+          trackingID: 'G-EWZ9D3QY7X',
+          anonymizeIP: true,
         },
       }),
     ],
@@ -64,11 +59,11 @@ const config = {
       },
       docs: {
         sidebar: {
-          autoCollapseCategories: true,
+          autoCollapseCategories: false,
         },
       },
       navbar: {
-        title: 'VRChat Creation',
+        title: 'VRChat CreatorDocs 非公式日本語翻訳',
         logo: {
           alt: 'VRChat Logo',
           src: 'img/logo.png',
@@ -76,6 +71,7 @@ const config = {
         items: [
           {to: 'worlds', label: 'Worlds', position: 'left'},
           {to: 'avatars', label: 'Avatars', position: 'left'},
+          {to: '/about-this-site', label: 'このサイトについて', position: 'left'},
           {to: 'economy', label: 'Creator Economy', position: 'left'},
           {to: 'releases', label: 'Releases', position: 'left'},
           {to: 'https://udonsharp.docs.vrchat.com', label: 'UdonSharp', position: 'right'},
@@ -129,19 +125,11 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} VRChat Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
         additionalLanguages: ['csharp']
-      },
-      algolia: {
-        appId: 'NQHMNOH2YO',
-        apiKey: '292dfc501d73d6fa1352744ce4620735',
-        indexName: 'VRChat_Docs',
-        contextualSearch: true,
-        externalUrlRegex: 'https:\/\/(?!creators)' // Results that don't come from this site should redirect using their absolute URL, rather than redirecting relative to the current site
       },
     }),
 };

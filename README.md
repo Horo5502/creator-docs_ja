@@ -1,25 +1,61 @@
-This repo holds the source for the VRChat Creator Docs!
+Github Pages: https://horo5502.github.io/creator-docs_ja/
 
-![image](https://github.com/vrchat-community/creator-docs/assets/737888/0d5f6c1f-3c47-4a5d-8f2f-6207a7b33deb)
+# Creator-Docs_ja
+[VRChat公式クリエイタードキュメント](https://creators.vrchat.com/)を**非公式に**翻訳したものです。  
+翻訳途中なので、まだ翻訳されていないページもあります。未翻訳のページには404NotFoundが表示されます。
 
-## Suggesting Edits
+<!-- 新規翻訳の貢献を受け入れています! 詳細は[こちら](https://horo5502.github.io/creator-docs_ja/how-to-contribute/)から。 -->
 
-Please read the [contribution guide](https://creators.vrchat.com/contribute/) before suggesting an edit.
+公式ドキュメントのGithubリポジトリ:  
+Creator Docs  
+https://creators.vrchat.com/
 
-To suggest an edit to an existing page, you can use the "Edit this page" link at the bottom of most pages on the site. 
+VCC Docs  
+https://vcc.docs.vrchat.com/  
 
-![Suggesting Edits link](https://github.com/vrchat-community/creator-docs/assets/737888/0dfb0fdd-0bec-4bea-9ceb-9bb752655e6d)
+UdonSharp Docs(内容は本家リポジトリに移行中のよう?)  
+https://udonsharp.docs.vrchat.com/  
 
-GitHub will help you set up a fork of the docs so you can edit them and submit a Pull Request to this repo, to have your changes integrated.
+---
+以下Docusaurusの自動生成README
+# Website
 
-## Local Development
-You can also directly fork this repo to suggest many changes at once.
-1. Fork the repo to your own GitHub account.
-2. Edit the markdown docs on your own machine.
-3. Use Docusaurus to preview the updates if you want!
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-## Using Docusaurus
-The docs are built with [Docusaurus](https://docusaurus.io/docs/), so you can run a local server to see what your changes will look like very quickly.
-1. Clone the repo (or your fork).
-2. Run `npm install` in the `Docs` folder to install the required packages.
-3. Run `npm run start` in the `Docs` folder to run the Docusaurus server, which will build the site and open a browser pointing to a local server with your live preview. Just change a page or add a new one, and the server will hot-reload the content so you can see it right away.
+### Installation
+
+```
+$ yarn
+```
+
+### Local Development
+
+```
+$ yarn start
+```
+
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+### Build
+
+```
+$ yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```
+$ USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
