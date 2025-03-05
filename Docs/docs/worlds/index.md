@@ -2,12 +2,11 @@
 sidebar_position: 1
 ---
 
-# Worlds
-In VRChat, you can create and visit custom worlds, powered by Unity!
+# ワールド
+VRChatでは、Unityを使って独自のワールドを制作したり訪れたりすることができます！
 
-- To get started, check out [Creating Your First World](/worlds/creating-your-first-world).
-- Learn about [Udon](/worlds/udon), VRChat's programming language.
-- [Allowed World Components](/worlds/whitelisted-world-components) 
-- [Supported Scripted Assets](/worlds/supported-assets) 
-- [World Creation, Optimization, and Community Labs Tips](/worlds/submitting-a-world-to-be-made-public)
-
+- 始めるには、[最初のワールドを制作する](/worlds/creating-your-first-world)をチェックしてください。
+- VRChatのプログラミング言語である[Udon](/worlds/udon)について学びましょう。
+- [許可されているワールドコンポーネント](/worlds/whitelisted-world-components)
+- [サポートされているスクリプトアセット](/worlds/supported-assets)
+- [ワールド制作、最適化、コミュニティラボのヒント](/worlds/submitting-a-world-to-be-made-public)

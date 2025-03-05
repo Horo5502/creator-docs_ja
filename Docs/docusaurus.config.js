@@ -16,6 +16,11 @@ const config = {
   organizationName: 'Horo5502', // Usually your GitHub org/user name.
   projectName: 'creator-docs-ja', // Usually your repo name.
 
+  i18n: {
+    defaultLocale: 'ja',
+    locales: ['ja'],
+  },
+
   presets: [
     [
       'classic',
@@ -83,7 +88,7 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'ドキュメント',
             items: [
               {to: 'worlds', label: 'Worlds'},
               {to: 'avatars', label: 'Avatars'},
@@ -91,7 +96,7 @@ const config = {
             ],
           },
           {
-            title: 'Tools',
+            title: 'ツール',
             items: [
               {to: 'https://udonsharp.docs.vrchat.com', label: 'UdonSharp'},
               {to: 'https://vcc.docs.vrchat.com', label: 'Creator Companion'},
@@ -99,7 +104,7 @@ const config = {
             ],
           },
           {
-            title: 'Community',
+            title: 'コミュニティ',
             items: [
               {
                 label: 'Discord',
@@ -112,7 +117,7 @@ const config = {
             ],
           },
           {
-            title: 'More',
+            title: 'その他',
             items: [
               {
                 label: 'Releases',
@@ -121,6 +126,14 @@ const config = {
               {
                 label: 'Roadmap',
                 to: '/roadmap',
+              },
+              {
+                label: 'プライバシーポリシー',
+                to: '/privacy-policy'
+              },
+              {
+                label: 'このサイトのGitHub',
+                href: 'https://github.com/horo5502/creator-docs_ja'
               },
             ],
           },

@@ -3,36 +3,36 @@ sidebar_position: -99
 ---
 import CurrentUnityVersion from '@site/src/components/UnityVersionedText.js';
 
-# Welcome!
+# ようこそ!
 
-VRChat is a social platform where you can meet people, explore user-created worlds, and express yourself through custom avatars. Whether you're a seasoned developer or a newcomer, the VRChat SDK helps you bring your own ideas to life.
+VRChatは、人々と出会い、ユーザーが作成した世界を探索し、独自のアバターを通じて自分を表現できるソーシャルプラットフォームです。熟練した開発者でも初心者でも、VRChat SDKは独自のアイデアを実現するのに役立ちます。
 
-- [Get started with the VRChat SDK](/sdk)
-- Design custom [avatars](/avatars)
-- Build immersive [worlds](/worlds)
-- Develop for multiple [platforms](platforms)
-- Join the [Creator Economy](/economy)
-- [Contribute](/contribute) to our documentation
-- Explore our [creators roadmap](/roadmap)
+- [VRChat SDK入門](/sdk)
+- 独自の[アバター](/avatars)をつくる
+- 没入感のある[ワールド](/worlds)をつくる
+- 複数の[プラットフォーム](platforms)向けに開発する
+- [クリエイターエコノミー](/economy)に参加する
+- ドキュメントに[貢献する](/contribute)
+- [クリエイターロードマップ](/roadmap)を探索する
 
-## Quickstart
+## クイックスタート
 
-Follow the steps below to quickly set up the VRChat SDK:
+以下の手順に従って、VRChat SDKをすばやくセットアップしましょう。
 
 <div class="video-container">
     <iframe src="https://www.youtube.com/embed/0u1g0TYoJsU" title="VRChat Creator Companion" frameborder="0" allow="encrypted-media; gyroscope; web-share" allowfullscreen></iframe>
 </div>
 
-1. Download & Install [the Creator Companion](https://vrchat.com/download/vcc).
-2. If Unity is not installed, the Creator Companion will help you download Unity Hub, install Unity version [<CurrentUnityVersion/>](/sdk/upgrade/current-unity-version/) (VRChat SDK 3.4.2 or earlier is Unity 2019.4.31f1), and [create a Unity Account](https://id.unity.com/account/new).
-3. Use the Creator Companion to create a new Worlds or Avatar project, and open it with Unity.
-4. Build your [world](/worlds/creating-your-first-world) or [avatar](/avatars/creating-your-first-avatar) in Unity, and test it in VRChat using the SDK Control Panel.
-5. Once ready, use the SDK control panel to publish your world or avatar to VRChat!
+1. [Creator Companion](https://vrchat.com/download/vcc)をダウンロードしてインストールする。
+2. Unityがインストールされていない場合は、Creator CompanionがUnity Hubのダウンロード、バージョン[<CurrentUnityVersion/>](/sdk/upgrade/current-unity-version/)のUnity（VRChat SDK 3.4.2以前はUnity 2019.4.31f1）のインストール、[Unityアカウントの作成](https://id.unity.com/account/new)を手助けします。
+3. Creator Companionを使って新しいワールドまたはアバタープロジェクトを作成し、Unityで開く。
+4. Unityで[ワールド](/worlds/creating-your-first-world)または[アバター](/avatars/creating-your-first-avatar)を構築し、SDKコントロールパネルを使ってVRChatでテストする。
+5. 準備ができたら、SDKコントロールパネルを使ってワールドまたはアバターをVRChatに公開する！
 
-## World Creation
+## ワールド制作
 
-To make a VRChat world, you construct a scene in Unity using typical 3D models, materials and lighting. You can add interactivity with [Udon](/worlds/udon), our custom scripting system. Udon can be built with the visual [Udon Graph](/worlds/udon) or by writing C#-like code using [UdonSharp](https://udonsharp.docs.vrchat.com). You can use our [Networking](/worlds/udon/networking) system to synchronize experiences between players.
+VRChatのワールドを作成するには、Unityで典型的な3Dモデル、マテリアル、ライティングを使用してシーンを構築します。独自のスクリプトシステムである[Udon](/worlds/udon)を使ってインタラクティブ性を追加できます。Udonはビジュアルな[Udon Graph](/worlds/udon)で構築するか、[UdonSharp](https://udonsharp.docs.vrchat.com)を使ってC#ライクなコードを書くことができます。[ネットワーキング](/worlds/udon/networking)システムを使用して、プレイヤー間で体験を同期させることができます。
 
-## Avatar Creation
+## アバター制作
 
-To make a VRChat avatar, you must first create or find a 3D character, then ensure that it is [rigged](/avatars/creating-your-first-avatar#rigging-your-avatar) to work with VRChat. You can then [import your rigged model](/avatars/creating-your-first-avatar#importing-your-avatar) into Unity and add [Expressions and Controls](/avatars/expression-menu-and-controls), [Avatar Dynamics](/avatars/avatar-dynamics) and much more. 
+VRChatのアバターを作成するには、まず3Dキャラクターを作成または見つけ、VRChatで動作するように[リギング](/avatars/creating-your-first-avatar#rigging-your-avatar)されていることを確認します。その後、[リギングされたモデルをインポート](/avatars/creating-your-first-avatar#importing-your-avatar)し、[エクスプレッションとコントロール](/avatars/expression-menu-and-controls)、[アバターダイナミクス](/avatars/avatar-dynamics)などを追加します。

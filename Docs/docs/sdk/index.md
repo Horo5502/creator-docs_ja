@@ -2,81 +2,81 @@
 sidebar_position: -1
 ---
 
-# Getting Started
+# はじめに
 
-Before you can create [avatars](/avatars) and [worlds](/worlds), you need to perform the following steps.
+[アバター](/avatars)や[ワールド](/worlds)を作成する前に、以下のステップを実行してください。
 
 :::tip
 
-If you're new to VRChat, read the [VRChat's "Getting Started"](https://vrch.at/getting-started) page.
+VRChat自体が初めての方は、[VRChatの「はじめに」](https://vrch.at/getting-started)ページを読んでください。
 
 :::
 
-The **[VRChat Creator Companion](https://vcc.docs.vrchat.com/)** is the easiest and quickest way to get started. It installs [Unity](https://unity.com/) and the VRChat software development kit (SDK) for you.
+**[VRChat Creator Companion](https://vcc.docs.vrchat.com/)** は、最も簡単で迅速に始める方法です。これにより、[Unity](https://unity.com/)とVRChatソフトウェア開発キット(SDK)がインストールされます。
 
-- VRChat uses the Unity game engine. Avatars and worlds are also created in Unity.
-- The VRChat SDK allows you to use Unity to create avatars and worlds. 
+- VRChatはUnityゲームエンジンを使用しています。アバターやワールドもUnityで作成されます。
+- VRChat SDKを使用すると、Unityを使ってアバターやワールドを作成できます。
 
-## Your first project
-You should use Windows to create your first project.
+## 最初のプロジェクト
+最初のプロジェクトには、Windowsを使用することをおすすめします。
 
-1. [Download the VRChat Creator Companion (VCC)](https://vrchat.com/download/vcc).
-    - Read the [documentation](https://vcc.docs.vrchat.com/). 
-2. Install the VCC.
-	- The default install location is `%LocalAppData%/Programs/VRChat Creator Companion`, but you can change this as you'd like.
-4. The VCC should open automatically. If not, search for "Creator Companion" in Windows.
-5. Click "Create New Project".
-6. Choose "Avatar" or "World project".
-7. Name your project.
-8. Choose a location.
-9. Click "Create Project".
+1. [VRChat Creator Companion(VCC)をダウンロード](https://vrchat.com/download/vcc)します。
+    - [ドキュメント](https://vcc.docs.vrchat.com/)を読んでください。
+2. VCCをインストールします。
+    - デフォルトのインストール場所は`%LocalAppData%/Programs/VRChat Creator Companion`ですが、好きなように変更できます。
+4. VCCは自動的に開くはずです。開かない場合は、Windowsで「Creator Companion」と検索してください。
+5. 「Create New Project」をクリックします。
+6. 「Avatar」または「World project」を選択します。
+7. プロジェクトに名前を付けます。
+8. 場所を選択します。
+9. 「Create Project」をクリックします。
 
 :::note
-Do you want to upload to Android, Quest, or iOS? Read the [platforms](/platforms) page.
+Android、Quest、またはiOSにアップロードしたいですか？[プラットフォーム](/platforms)ページを読んでください。
 :::
 
-## Opening your project
+## プロジェクトを開く
 
-You can now open your new project! After creating a new project, the next page in the Creator Companion will show an **Open Project** button. You can also access it from the **Projects** tab on the left sidebar.
+新しいプロジェクトを開くことができます！新しいプロジェクトを作成した後、Creator Companionの次のページに**Open Project**ボタンが表示されます。また、左サイドバーの**Projects**タブからアクセスすることもできます。
 
-If your project isn't listed, click the dropdown menu next to **Create New Project** and then **Add Existing Project** via the project screen and select it. After the project is open:
+プロジェクトがリストにない場合は、**Create New Project**の横にあるドロップダウンメニューをクリックし、プロジェクト画面から**Add Existing Project**をクリックして選択してください。プロジェクトが開いたら：
 
-1. Check the title bar to ensure it ends with `PC, Mac & Linux Standalone <DX11>`. 
-    - If it does not, then go to `File > Build Settings...`, select `PC, Mac & Linux Standalone`, then click `Switch Platform` in the bottom left.
+1. タイトルバーを確認して、`PC, Mac & Linux Standalone <DX11>`で終わっていることを確認してください。
+    - そうでない場合は、`File > Build Settings...`に移動し、`PC, Mac & Linux Standalone`を選択して、左下の`Switch Platform`をクリックしてください。
 
-2. Navigate to `VRChat SDK > Show Control Panel > Authentication`. 
+2. `VRChat SDK > Show Control Panel > Authentication`に移動します。
 
-3. Sign into your VRChat account. You'll need to do this to upload any content you create.
-    - You must have a VRChat account of at least "New User" [Trust Rank](https://docs.vrchat.com/docs/vrchat-safety-and-trust-system) to upload content. You cannot use a Steam, Meta, or Viveport account to upload content.
+3. VRChatアカウントにサインインしてください。作成したコンテンツをアップロードするためにはこれが必要です。
+    - コンテンツをアップロードするには、少なくとも「New User」[トラストランク](https://docs.vrchat.com/docs/vrchat-safety-and-trust-system)のVRChatアカウントが必要です。Steam、Meta、またはViveportアカウントではコンテンツをアップロードできません。
 
-## Using Unity Hub instead
-Though we don't recommend this, if you'd like to install Unity yourself without the VCC, check the [Current Supported Unity Version](/sdk/upgrade/current-unity-version) page and install the version of Unity that VRChat currently supports using the Unity Hub.
+## Unity Hubを使用する場合
+おすすめはしませんが、VCCを使わずに自分でUnityをインストールしたい場合は、[現在サポートされているUnityバージョン](/sdk/upgrade/current-unity-version)ページを確認し、Unity Hubを使用してVRChatが現在サポートしているバージョンのUnityをインストールしてください。
 
-If you didn't use the VCC to set up your project, you'll also need to install the SDK. Do so via the [VRChat Creator Companion](https://vcc.docs.vrchat.com/guides/getting-started).
+プロジェクトのセットアップにVCCを使用しなかった場合は、SDKもインストールする必要があります。[VRChat Creator Companion](https://vcc.docs.vrchat.com/guides/getting-started)を通じて行ってください。
 
-To create projects using just the Unity Hub:
-* Open Unity Hub (or just the editor, if you chose to go that route).
-* Create a new project, **set it to 3D, and save it**.
-* Don't use HDRP or URP. VRChat doesn't use it.
+Unity Hubだけを使ってプロジェクトを作成するには：
+* Unity Hubを(またはあえてその道に進んだ場合は、単にエディタを)開きます。
+* 新しいプロジェクトを作成し、**3Dに設定して保存**します。
+* HDRPやURPは使用しないでください。VRChatはそれを使用しません。
 
-To open projects using just the Unity Hub:
-* Click **Open** in the top right, then select the directory where your project lives.
+Unity Hubだけを使ってプロジェクトを開くには：
+* 右上の**Open**をクリックし、プロジェクトがあるディレクトリを選択します。
 
-## Tips 
+## ヒント
 
-* If you're building content for VRChat for Meta Quest, you should also be building for Android. Check our [Android documentation](/platforms/android/index.md) for more details.
-* Save your projects in a mass-storage drive with a lot of space. Unity projects can get quite large, especially if you use versioning software
-* Do not use a single project for tons of different avatars or worlds. This is a quick way to make future migrations a huge pain in the butt!
-* If you know how to use version control software like [Git](https://git-scm.com/) or [Unity Version Control](https://unity.com/solutions/version-control), use it! It makes it very easy to roll back changes that break your project.
+* Meta Quest用にVRChatのコンテンツを作成する場合は、Android用にもビルドする必要があります。詳細は[Androidドキュメント](/platforms/android/index.md)を確認してください。
+* プロジェクトは大容量のストレージドライブに保存してください。Unityプロジェクトは非常に大きくなることがあります。特にバージョン管理ソフトを使用する場合はなおさらです。
+* たくさんの異なるアバターやワールドのために1つのプロジェクトを使用しないでください。これは将来の移行を非常に面倒にします！
+* [Git](https://git-scm.com/)や[Unity Version Control](https://unity.com/solutions/version-control)のようなバージョン管理ソフトを使えるなら、ぜひ使ってください！破壊的な変更を簡単に元に戻すことができます。
 
-### Understanding the Terms "Player" vs. "User"
+### 「プレイヤー」と「ユーザー」の用語の理解
 
-In VRChat, the terms "player" and "user" can refer to different things depending on the context:
+VRChatでは、「プレイヤー」と「ユーザー」という用語は文脈によって異なる意味を持つことがあります：
 
-- User: This is the standard term for anyone using VRChat, whether they're in the same world as you or not. It’s the general term used for all participants on the platform.
-- Player: In technical terms, a "player" specifically refers to the individual instantiation of a user within a world instance. This distinction is more relevant for the underlying system and certain technical features (like multiplayer interactions). For example, when locally testing worlds there can be multiple players of the same user in a world instance.
+- ユーザー：これは、VRChatを使用しているすべての人を指す標準的な用語です。あなたと同じワールドにいるかどうかに関わらず、プラットフォーム上のすべての参加者に対して使用される一般的な用語です。
+- プレイヤー：技術的には、「プレイヤー」はワールドインスタンス内でのユーザーの個別のインスタンスを具体的に指します。この区別は、基盤となるシステムや特定の技術的な機能（マルチプレイヤーの相互作用など）にとってより関連性があります。たとえば、ローカルでワールドをテストする際には、同じユーザーによる複数のプレイヤーがワールドインスタンスに存在することがあります。
 
-### What's Next?
-Your project is ready! You can move on to [World Creation](/worlds) or [Avatar Creation](/avatars).
+### お次は？
+プロジェクトの準備が整いました！[ワールド作成](/worlds)や[アバター作成](/avatars)に進んでください。
 
-If there are any errors, even with a brand new empty project, [please contact our Support team](https://vrch.at/support).
+もし、新しい空のプロジェクトでもエラーが発生する場合は、[サポートチームにご連絡ください](https://vrch.at/support)。
