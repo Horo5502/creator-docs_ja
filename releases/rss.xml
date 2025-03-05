@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>VRChat CreatorDocs 非公式日本語翻訳 Blog</title>
+        <link>https://horo5502.github.io/creator-docs_ja/releases</link>
+        <description>VRChat CreatorDocs 非公式日本語翻訳 Blog</description>
+        <lastBuildDate>Wed, 11 Dec 2024 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>ja</language>
+        <item>
+            <title><![CDATA[Release 3.7.5]]></title>
+            <link>https://horo5502.github.io/creator-docs_ja/releases/release-3-7-5</link>
+            <guid>https://horo5502.github.io/creator-docs_ja/releases/release-3-7-5</guid>
+            <pubDate>Wed, 11 Dec 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-5#summary" class="hash-link" aria-label="Summary への直接リンク" title="Summary への直接リンク">​</a></h2>
+<p>Version <code>3.7.5</code> adds Build &amp; Test for Quest, similar to how it works on Android phones. Local-only contact receivers no longer count towards an avatar's performance rank. And there's also a new Udon event, <code>OnVRCPlusMassGift</code>, to make your worlds react to Gift Drops!</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes--changes">Fixes &amp; Changes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-5#fixes--changes" class="hash-link" aria-label="Fixes &amp; Changes への直接リンク" title="Fixes &amp; Changes への直接リンク">​</a></h2>
+<ul>
+<li>Build &amp; Test mode is now available for Quest!</li>
+<li>DPID has been reworked to have much sharper visuals when operating on <code>AlphaIsTransparency</code> textures.<!-- -->
+<ul>
+<li>When you import textures with DPID and <code>AlphaIsTransparency</code> enabled, the SDK now considers the alpha channel separately, making alpha masks as sharp as equivalent color masks.</li>
+</ul>
+</li>
+<li>Resolved an issue where the DPID setting in the SDK would not persist between sessions.</li>
+<li>Fixed issue where running "Build and Test" before setting the<code>blueprintId</code> of a world or avatar would trigger the error "Attempted to load the data for a world we do not own, clearing blueprint ID". This error has also been downgraded to a warning.</li>
+<li>Contact receivers marked as local-only no longer count towards an avatar's performance rank.</li>
+<li>Fixed more cases of jittering with specific configurations of <a href="https://horo5502.github.io/creator-docs_ja/avatars/avatar-dynamics/constraints">VRChat Constraints</a>.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="udon">Udon<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-5#udon" class="hash-link" aria-label="Udon への直接リンク" title="Udon への直接リンク">​</a></h2>
+<ul>
+<li>Added a new <a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/graph/event-nodes/#onvrcplusmassgift">OnVRCPlusMassGift</a> event that allows worlds to react to Gift Drops.</li>
+<li>Added the ability for <code>GetComponent</code> to be called on all TextMeshPro Components and <code>VRCMidiPlayer</code>.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="clientsim">ClientSim<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-5#clientsim" class="hash-link" aria-label="ClientSim への直接リンク" title="ClientSim への直接リンク">​</a></h2>
+<ul>
+<li>Fixed a ClientSim bug where the first <code>OnAvatarEyeHeightChanged</code> call after entering Play Mode would cause a type mismatch error.</li>
+<li>Fixed <a href="https://horo5502.github.io/creator-docs_ja/worlds/layers/#interaction-passthrough-for-user-layers">Interaction Passthrough</a> layers in ClientSim to more closely match client behavior.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="video-players">Video Players<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-5#video-players" class="hash-link" aria-label="Video Players への直接リンク" title="Video Players への直接リンク">​</a></h2>
+<ul>
+<li>Video players no longer play untrusted URLs in public instances unless the world creator adds the domain to the world's allowlist via the VRChat website.<!-- -->
+<ul>
+<li>Video players in private instances can play any untrusted URL.</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+            <category>release</category>
+        </item>
+        <item>
+            <title><![CDATA[Release 3.7.4 - Persistence!]]></title>
+            <link>https://horo5502.github.io/creator-docs_ja/releases/release-3-7-4</link>
+            <guid>https://horo5502.github.io/creator-docs_ja/releases/release-3-7-4</guid>
+            <pubDate>Thu, 21 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-4#summary" class="hash-link" aria-label="Summary への直接リンク" title="Summary への直接リンク">​</a></h2>
+<p>This update adds <a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/persistence">Persistence</a> to Udon! Persistence allows you to build VRChat worlds that store data between sessions.</p>
+<p>This update also fixes a few minor issues around <a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/data-containers/vrcjson">VRCJSON</a> and <a href="https://horo5502.github.io/creator-docs_ja/avatars/avatar-dynamics/constraints">VRChat Constraints</a>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="persistence">Persistence!<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-4#persistence" class="hash-link" aria-label="Persistence! への直接リンク" title="Persistence! への直接リンク">​</a></h2>
+<p>Persistence allows worlds to save high scores, inventories, the player's last position, currency, unlocks, preferences, and much more. When a player leaves a world and returns later, Udon can access their saved data.</p>
+<p>Learn all about the new features in our <a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/persistence">Persistence SDK docs</a>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="other-fixes">Other Fixes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-4#other-fixes" class="hash-link" aria-label="Other Fixes への直接リンク" title="Other Fixes への直接リンク">​</a></h2>
+<ul>
+<li>Fixed <a href="https://horo5502.github.io/creator-docs_ja/avatars/avatar-dynamics/constraints">VRChat Constraints</a> that need to run before <a href="https://horo5502.github.io/creator-docs_ja/avatars/avatar-dynamics/physbones">Physbones</a> not updating while in edit mode.</li>
+<li>Fixed <a href="https://horo5502.github.io/creator-docs_ja/avatars/avatar-dynamics/constraints">VRChat Constraints</a> that have a child <a href="https://horo5502.github.io/creator-docs_ja/avatars/avatar-dynamics/physbones">Physbone</a>, but also depend on one, not following their sources correctly.</li>
+<li>Several fixes for <a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/data-containers/vrcjson">VRCJSON</a>:<!-- -->
+<ul>
+<li>Fixed an issue where braces inside strings can fail to deserialize.</li>
+<li>Fixed an issue where empty arrays can fail to deserialize if there is whitespace between the opening and closing, such as <code>[ ]</code>.</li>
+<li>JSON which starts with a BOM (Byte Order Mark, <code>\uFEFF</code>) would fail to deserialize. This character will now be ignored if it is at the start of the input.</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+            <category>release</category>
+        </item>
+        <item>
+            <title><![CDATA[Release 3.7.3]]></title>
+            <link>https://horo5502.github.io/creator-docs_ja/releases/release-3-7-3</link>
+            <guid>https://horo5502.github.io/creator-docs_ja/releases/release-3-7-3</guid>
+            <pubDate>Tue, 05 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-3#summary" class="hash-link" aria-label="Summary への直接リンク" title="Summary への直接リンク">​</a></h2>
+<p>This update fixes multiple issues with <a href="https://horo5502.github.io/creator-docs_ja/avatars/avatar-dynamics/constraints">VRChat Constraints</a>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-features">New features<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-3#new-features" class="hash-link" aria-label="New features への直接リンク" title="New features への直接リンク">​</a></h2>
+<ul>
+<li>Added an option to the Settings tab of the SDK Control Panel to prevent VRChat constraints from running while in Edit mode.</li>
+<li>It is now possible to trigger the "Activate" and "Zero" functions on a VRChat constraint from C# Unity Editor scripts by using the new <code>ActivateConstraint()</code> and <code>ZeroConstraint()</code> methods, <a href="https://feedback.vrchat.com/sdk-bug-reports/p/expose-activate-button-procedure-of-vrcconstraint-components-to-api" target="_blank" rel="noopener noreferrer">addressing this Canny request</a>.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes--changes">Fixes &amp; Changes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-3#fixes--changes" class="hash-link" aria-label="Fixes &amp; Changes への直接リンク" title="Fixes &amp; Changes への直接リンク">​</a></h2>
+<ul>
+<li>Improved <a href="https://horo5502.github.io/creator-docs_ja/avatars/avatar-dynamics/physbones">Physbone</a> and <a href="https://horo5502.github.io/creator-docs_ja/avatars/avatar-dynamics/contacts">Contact</a> behavior when used beneath <a href="https://horo5502.github.io/creator-docs_ja/avatars/avatar-dynamics/constraints">VRChat Constraints</a> to reduce jittering.<!-- -->
+<ul>
+<li>They sort their internal execution orders properly within a frame now.</li>
+</ul>
+</li>
+<li>Fixed a case where toggled constraints could misbehave when three or more constraints are used on the same GameObject at once.</li>
+<li>Fixed the "Activate" and "Zero" functions of VRChat Constraints not applying as overrides to prefab instances.</li>
+<li>Fixed <code>VRCConstraintSource</code> having its values overwritten with defaults when created with the default constructor in C#.</li>
+<li>Fixed rotation, aim and look-at constraints drifting very gradually when one or more axes are unfrozen in certain configurations.</li>
+<li>Fixed constraints applying incorrect positions when the target transform is scaled to zero in any axis.</li>
+<li>Fixed constraints sometimes having their position or rotation shifted by a tiny amount every frame under certain conditions when they should be staying still.<!-- -->
+<ul>
+<li>This should make it easier to work with prefabs containing constraints.</li>
+</ul>
+</li>
+<li><a href="https://horo5502.github.io/creator-docs_ja/avatars/avatar-dynamics/physbones">Physbone</a> stats now recalculate properly when reloading a scene or switching platform.</li>
+<li>Fixed <a href="https://horo5502.github.io/creator-docs_ja/avatars/avatar-dynamics/physbones">Physbone</a> jitter by including fixes from client release <a href="https://docs.vrchat.com/docs/vrchat-202433" target="_blank" rel="noopener noreferrer">2024.3.3</a>.</li>
+<li>Fixed "Avatar Options" incorrectly being shown twice in the Settings tab of the SDK Control Panel.</li>
+<li>Fixed <code>com.unity.ugui</code> missing as a dependency of the Worlds SDK, addressing <a href="https://feedback.vrchat.com/sdk-bug-reports/p/vrcsdk-packagejson-is-missing-dependency-on-unity-ui" target="_blank" rel="noopener noreferrer">this Canny request</a>.</li>
+<li>Added a new "ExampleData" type to the SDK, which will be used to hold metadata for Examples in the future.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="known-issues">Known Issues<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-3#known-issues" class="hash-link" aria-label="Known Issues への直接リンク" title="Known Issues への直接リンク">​</a></h2>
+<ul>
+<li>The first time you open a Scene and select a GameObject inside a prefab with a U# Behaviour, the GUI for the component directly below that U# Behaviour will not show its GUI. Deselecting and re-selecting the prefab fixes this.</li>
+<li>Buffer Particles don't work as they did in Unity 2019, <a href="https://x.com/hfcRedddd/status/1696915379090604179" target="_blank" rel="noopener noreferrer">there is a workaround to fix them from community member hfcRed here</a>.</li>
+<li>Unity 2022 sometimes causes Rider's debugger to stop for unhandled exceptions in Unity's IMGUI.<!-- -->
+<ul>
+<li>Please refer to <a href="https://forum.unity.com/threads/rider-debugger-breaks-on-unhandled-exception.1135879/#post-7305256" target="_blank" rel="noopener noreferrer">this workaround</a> and <a href="https://youtrack.jetbrains.com/issue/RIDER-64944" target="_blank" rel="noopener noreferrer">Jetbrains's bug tracker</a> for more information.</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+            <category>release</category>
+        </item>
+        <item>
+            <title><![CDATA[Release 3.7.2]]></title>
+            <link>https://horo5502.github.io/creator-docs_ja/releases/release-3-7-2</link>
+            <guid>https://horo5502.github.io/creator-docs_ja/releases/release-3-7-2</guid>
+            <pubDate>Mon, 21 Oct 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-2#summary" class="hash-link" aria-label="Summary への直接リンク" title="Summary への直接リンク">​</a></h2>
+<p>This update adds <a href="https://horo5502.github.io/creator-docs_ja/platforms/android/build-test-mobile">Build &amp; Test for Mobile</a>, <a href="https://horo5502.github.io/creator-docs_ja/sdk/example-central">Example Central</a> and some fixes for <a href="http://hello.vrchat.com/blog/spookality-2024-arrives-october-1" target="_blank" rel="noopener noreferrer">Spookality '24</a>! It also introduces <em>Udon Code Signing</em> for improved security.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-features">New features<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-2#new-features" class="hash-link" aria-label="New features への直接リンク" title="New features への直接リンク">​</a></h2>
+<ul>
+<li><a href="https://horo5502.github.io/creator-docs_ja/platforms/android/build-test-mobile">Build &amp; Test for Mobile</a> - send worlds directly to a connected Android Device while working on it for <em>much</em> quicker testing and iteration.</li>
+<li><a href="https://horo5502.github.io/creator-docs_ja/sdk/example-central">Example Central</a> - browse and import SDK Examples from within the Unity Editor.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes--changes">Fixes &amp; Changes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-2#fixes--changes" class="hash-link" aria-label="Fixes &amp; Changes への直接リンク" title="Fixes &amp; Changes ��への直接リンク">​</a></h2>
+<ul>
+<li><code>VRCPlayerAPI.SetAvatarEyeHeightByMultiplier</code> now works properly in ClientSim.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="changes-in-372-beta2">Changes in <code>3.7.2-beta.2</code><a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-2#changes-in-372-beta2" class="hash-link" aria-label="changes-in-372-beta2 への直接リンク" title="changes-in-372-beta2 への直接リンク">​</a></h2>
+<ul>
+<li>Added <em>Udon Code Signing</em>!<!-- -->
+<ul>
+<li>Any worlds uploaded with this SDK (or newer) receive a server-side signature. This helps ensure only authentic (unmodified) versions of your world can be loaded into VRChat.<!-- -->
+<ul>
+<li>This makes it significantly harder for malicious players to cheat or bypass scripts in your worlds.</li>
+</ul>
+</li>
+<li>Each platform (PC, Android, iOS) has a different signature, so you need to upgrade all of your world's platforms.</li>
+<li>Udon code signing does not affect non-malicious users, and will not change anything about your Unity editor experience.</li>
+<li>This SDK also upgrades all your Udon scripts to a more efficient storage format (only relevant for very old world projects).</li>
+<li>We recommend upgrading and re-uploading your worlds with this SDK to make your worlds more secure!</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="changes-in-372-beta3">Changes in <code>3.7.2-beta.3</code><a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-2#changes-in-372-beta3" class="hash-link" aria-label="changes-in-372-beta3 への直接リンク" title="changes-in-372-beta3 への直接リンク">​</a></h2>
+<ul>
+<li>Fixed timing of Udon Code Signature calculation.<!-- -->
+<ul>
+<li>It is now calculated during the <a href="https://docs.unity3d.com/ScriptReference/Build.IProcessSceneWithReport.html" target="_blank" rel="noopener noreferrer"><code>IProcessSceneWithReport</code></a> callback with an execution order of <code>int.MaxValue - 8192</code> when you build a world.</li>
+<li>This fixes an issue with some Udon compilers (e.g. CyanTrigger) that modify code after signature calculation, making uploaded worlds fail verification.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="changes-between-beta3-and-the-the-final-release">Changes between <code>beta.3</code> and the the final release<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-2#changes-between-beta3-and-the-the-final-release" class="hash-link" aria-label="changes-between-beta3-and-the-the-final-release への直接リンク" title="changes-between-beta3-and-the-the-final-release への直接リンク">​</a></h2>
+<ul>
+<li>Fixed several bugs with Build &amp; Test for Mobile from open beta feedback.</li>
+<li>Added a number of helpful error messages when incorrectly setting up Build &amp; Test for Mobile.<!-- -->
+<ul>
+<li>For example, we will now warn you if your device's screen is locked.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="known-issues">Known Issues<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-2#known-issues" class="hash-link" aria-label="Known Issues への直接リンク" title="Known Issues への直接リンク">​</a></h2>
+<ul>
+<li>The first time you open a Scene and select a GameObject inside a prefab with a U# Behaviour, the GUI for the component directly below that U# Behaviour will not show its GUI. Deselecting and re-selecting the prefab fixes this.</li>
+<li>Buffer Particles don't work as they did in Unity 2019, <a href="https://x.com/hfcRedddd/status/1696915379090604179" target="_blank" rel="noopener noreferrer">there is a workaround to fix them from community member hfcRed here</a>.</li>
+<li>Unity 2022 sometimes causes Rider's debugger to stop for unhandled exceptions in Unity's IMGUI.<!-- -->
+<ul>
+<li>Please refer to <a href="https://forum.unity.com/threads/rider-debugger-breaks-on-unhandled-exception.1135879/#post-7305256" target="_blank" rel="noopener noreferrer">this workaround</a> and <a href="https://youtrack.jetbrains.com/issue/RIDER-64944" target="_blank" rel="noopener noreferrer">Jetbrains's bug tracker</a> for more information.</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+            <category>release</category>
+        </item>
+        <item>
+            <title><![CDATA[Release 3.7.1]]></title>
+            <link>https://horo5502.github.io/creator-docs_ja/releases/release-3-7-1</link>
+            <guid>https://horo5502.github.io/creator-docs_ja/releases/release-3-7-1</guid>
+            <pubDate>Fri, 20 Sep 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-1#summary" class="hash-link" aria-label="Summary への直接リンク" title="Summary への直接リンク">​</a></h2>
+<p>This update exposes some highly-requested functions to Udon, adds high-quality DPID mipmapping support (opt-in beta), and optimizes PhysBone gizmos.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-features">New features<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-1#new-features" class="hash-link" aria-label="New features への直接リンク" title="New features への直接リンク">​</a></h2>
+<ul>
+<li>Exposed the following C# features to Udon:<!-- -->
+<ul>
+<li><code>Array.Sort()</code> allows Udon to sort Arrays in various ways, which is useful for managing Players in an Udon world. Addresses <a href="https://feedback.vrchat.com/udon/p/arraysort" target="_blank" rel="noopener noreferrer">this Canny post</a>.</li>
+<li><code>System.Random</code> allows Udon to create deterministic random seeds, as well as random Bytes and Doubles, extending the possibilities for randomness in Udon Worlds beyond what <code>UnityEngine.Random</code> can do. We exposed 4 new functions, addressing <a href="https://feedback.vrchat.com/udon/p/expose-systemrandom" target="_blank" rel="noopener noreferrer">this Canny post</a>.</li>
+<li><code>System.Text.StringBuilder</code> allows Udon to build and reformat strings with better performance than the existing string functions. We exposed 18 new functions and properties, addressing <a href="https://feedback.vrchat.com/udon/p/please-expose-stringbuilder" target="_blank" rel="noopener noreferrer">this Canny post</a>.</li>
+<li><code>System.Text.RegularExpressions</code> - <a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=net-8.0" target="_blank" rel="noopener noreferrer">RegEx</a> is a powerful system for searching, matching and replacing patterns within strings of text. We exposed 14 new functions and properties, addressing <a href="https://feedback.vrchat.com/udon/p/feedback-expose-systemtextregularexpressions-namespace" target="_blank" rel="noopener noreferrer">this Canny post</a>.</li>
+<li><code>System.Type</code> allows Udon to interact with data types, and can be useful to advanced creators who want to validate object types at runtime. We exposed 67 new functions and properties, addressing <a href="https://feedback.vrchat.com/udon/p/expose-systemtypeissubclassof-isinstanceoftype-issubclassof-and-basetype" target="_blank" rel="noopener noreferrer">this Canny post</a></li>
+</ul>
+</li>
+<li>The SDK now supports "Detail Preserving Image Downscaling" (DPID) mipmaps, which greatly improve the sharpness of world/avatar textures.<!-- -->
+<ul>
+<li>⚠️<!-- --> We're still working on this one! It is currently a BETA feature and requires explicit opt-in via the "Settings" panel in the SDK control panel.</li>
+<li>DPID replaces the mipmapping algorithm on all textures with the "Kaiser" filtering algorithm selected. "Box" filtering is unaffected.<!-- -->
+<ul>
+<li>The SDK build panel already encourages you to enable "Kaiser" filtering, which in turn now enables DPID.</li>
+</ul>
+</li>
+<li>Unlike the original algorithm, VRChat's version of DPID supports transparency. Enable <a href="https://docs.unity3d.com/Manual/texture-type-default.html" target="_blank" rel="noopener noreferrer">Alpha is Transparency</a> to avoid filtering artifacts on the edges of transparent textures.</li>
+<li>The original algorithm implementation was published under BSD 3-Clause (a permissive license like MIT). To 'pay it forward,' we've released our compute shader version under the same license! You can find it in the SDK: <code>com.vrchat.base\Editor\VRCSDK\Dependencies\VRChat\Resources\PerceptualMipmapping\PerceptualPostProcessor.compute</code>.</li>
+</ul>
+</li>
+<li>PhysBone gizmo rendering has been optimized.<!-- -->
+<ul>
+<li>Editor gizmos for PhysBones with non-0 radius setting now render 2-3x faster.</li>
+<li>Editor gizmos of multiple PhysBone components in the hierarchy of the selected object now render 1.5-2x faster.</li>
+<li>Addresses <a href="https://feedback.vrchat.com/avatar-dynamics-reports-and-feedback/p/1181-many-physbone-gizmos-lag-editor" target="_blank" rel="noopener noreferrer">this Canny post</a>.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes--changes">Fixes &amp; Changes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-1#fixes--changes" class="hash-link" aria-label="Fixes &amp; Changes への直接リンク" title="Fixes &amp; Changes への直接リンク">​</a></h2>
+<ul>
+<li>The SDK now blocks avatars containing particle systems or trail renderers set to destroy themselves when they finish. Particle systems on the avatar's root that disable themselves when they finish are also not allowed.</li>
+<li>Fixed typo in the Expression Parameters inspector showing used memory as bytes rather than bits.</li>
+<li>Fixed SDK Control Panel setting scripting defines every IMGUI redraw (improves performance slightly).</li>
+<li>Improved Lightprobe Hack behavior in situations with lots of ambient lighting.</li>
+<li>Fixed how empty expression parameter lists are filled with default parameters. Expression parameter lists can be empty again.</li>
+<li>Removed internal warning messages related to PhysBone and Constraint Burst jobs sometimes appearing when opening a project or recompiling scripts.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes--changes-to-dpid-in-371-beta2">Fixes &amp; Changes to DPID in <code>3.7.1-beta.2</code><a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-1#fixes--changes-to-dpid-in-371-beta2" class="hash-link" aria-label="fixes--changes-to-dpid-in-371-beta2 への直接リンク" title="fixes--changes-to-dpid-in-371-beta2 への直接リンク">​</a></h2>
+<ul>
+<li>Fixed <code>alphaIsTransparent</code> over-emphasising incorrect details.</li>
+<li>Fixed non-sRGB textures (e.g. normal maps) diverging at higher mip levels.<!-- -->
+<ul>
+<li>This should now be consistent with sRGB behavior.</li>
+</ul>
+</li>
+<li>Fixed edge cases where a single fully-transparent pixel would get counted when the others are all the same color.</li>
+<li>Fixed null reference exceptions being spammed in the log when importing SDK 3.7.1 for the first time.<!-- -->
+<ul>
+<li>DPID is now correctly applied to all mipmaps that previously used Kaiser.</li>
+</ul>
+</li>
+<li>Simplified and streamlined the compute shader.</li>
+<li>Reduced DPID-related log spam.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes--changes-to-dpid-in-the-final-version">Fixes &amp; Changes to DPID in the final version<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-1#fixes--changes-to-dpid-in-the-final-version" class="hash-link" aria-label="Fixes &amp; Changes to DPID in the final version への直接リンク" title="Fixes &amp; Changes to DPID in the final version への直接リンク">​</a></h2>
+<ul>
+<li>Marked DPID as "BETA" and switched to opt-in.</li>
+<li>Set "conservative mode" to be the default, since it seems to give better results overall.</li>
+<li>Fixed normal maps (again).</li>
+<li>Fixed support for lightmaps.</li>
+<li>Support DPID mipmaps on HDR and Float format textures.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="known-issues">Known Issues<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-1#known-issues" class="hash-link" aria-label="Known Issues への直接リンク" title="Known Issues への直接リンク">​</a></h2>
+<ul>
+<li>The first time you open a Scene and select a GameObject inside a prefab with a U# Behaviour, the GUI for the component directly below that U# Behaviour will not show its GUI. Deselecting and re-selecting the prefab fixes this.</li>
+<li>Buffer Particles don't work as they did in Unity 2019, <a href="https://x.com/hfcRedddd/status/1696915379090604179" target="_blank" rel="noopener noreferrer">there is a workaround to fix them from community member hfcRed here</a>.</li>
+<li>Unity 2022 sometimes causes Rider's debugger to stop for unhandled exceptions in Unity's IMGUI.<!-- -->
+<ul>
+<li>Please refer to <a href="https://forum.unity.com/threads/rider-debugger-breaks-on-unhandled-exception.1135879/#post-7305256" target="_blank" rel="noopener noreferrer">this workaround</a> and <a href="https://youtrack.jetbrains.com/issue/RIDER-64944" target="_blank" rel="noopener noreferrer">Jetbrains's bug tracker</a> for more information.</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+            <category>release</category>
+        </item>
+        <item>
+            <title><![CDATA[Release 3.7.0]]></title>
+            <link>https://horo5502.github.io/creator-docs_ja/releases/release-3-7-0</link>
+            <guid>https://horo5502.github.io/creator-docs_ja/releases/release-3-7-0</guid>
+            <pubDate>Fri, 16 Aug 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-0#summary" class="hash-link" aria-label="Summary への直接リンク" title="Summary への直接リンク">​</a></h2>
+<p>This update adds VRChat Constraints, Unity AI Navigation, improves Avatar editor panels, upgrades Standard Lite, implements new Player State APIs, and more!</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-features">New features<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-0#new-features" class="hash-link" aria-label="New features への直接リンク" title="New features への直接リンク">​</a></h2>
+<ul>
+<li>⚠️ The SDK now blocks uploads if the last built avatar exceeds the new reduced download or uncompressed size limits for Avatars.</li>
+<li>This release integrates <a href="https://docs.unity3d.com/Packages/com.unity.ai.navigation@1.1/manual/index.html" target="_blank" rel="noopener noreferrer">Unity 2022's AI Navigation</a> package, which allows you to create non-player characters (NPCs) that can intelligently move around the game world, using navigation meshes that are created automatically from your Scene geometry.<!-- -->
+<ul>
+<li>As the VRChat SDK now includes a reference to the AI navigation package, an "AI Navigation" window appears when you upgrade your scene. You can close it by right-clicking and selecting "Close."</li>
+<li>We published <a href="https://creators.vrchat.com/worlds/udon/ai-navigation/" target="_blank" rel="noopener noreferrer">AI Navigation documentation for VRChat Worlds</a> and an <a href="https://creators.vrchat.com/worlds/examples/ai-navigation-example/" target="_blank" rel="noopener noreferrer">AI Navigation Example Scene</a> to help you get started.</li>
+</ul>
+</li>
+<li>Some Avatar editor panels have been updated:<!-- -->
+<ul>
+<li>The Expression Parameters and Expressions Menu editors have been rebuilt from the ground up.</li>
+<li>The updated Expression Parameters editor:<!-- -->
+<ul>
+<li>Allows you to reorder elements via drag &amp; drop easily</li>
+<li>Uses a progress bar style meter to indicate how many synced bytes the parameters use</li>
+<li>The Expression Parameters assets now have a new icon, making them easier to see in your Assets folder</li>
+</ul>
+</li>
+<li>The updated Expressions Menu editor:<!-- -->
+<ul>
+<li>Shows the current Menu Controls count alongside the maximum number of Controls you can add</li>
+<li>Shows the types of each Control at-a-glance</li>
+<li>Allows you to reorder the Controls via drag &amp; drop easily</li>
+<li>Has improved and updated warnings and errors</li>
+<li>Has improved layout for editing all the Control types</li>
+<li>For Sub-Menu Controls - allows for quick creation of a new Menu asset and provides a button to open the editor for the submenu with a single click</li>
+<li>The Expressions Menu assets now have a new icon, so they're easier to see in your Assets folder</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Massively upgraded <code>Standard Lite</code> shader!<!-- -->
+<ul>
+<li>Considerably improved performance in the baseline.</li>
+<li><em>Non-linear Lightprobe sampling</em>: This will avoid unusual stark contrast for real-time objects in a scene.</li>
+<li><em>Lightprobe specularity</em>: This will fall back to using lightprobes in the scene to generate specular highlights if no reflection probes are present.</li>
+<li><em>Geometric Specular AA</em>: This will avoid jagged/aliased edges for shiny objects at a distance/at sharp angles by tweaking the roughness to add just enough to stretch any highlights over at least one extra pixel - this should reduce the apparent 'screen door' effect on a lot of geometry.</li>
+<li><em>Spherical Harmonics lightmap compatibility through MonoSH</em> (Bakery): This allows you to have the appearance of real-time lighting without the cost, by having every pixel of a lightmap encode light spread and direction, and otherwise treating it as being lit that way. The MonoSH version in particular avoids additional memory cost by squeezing everything into just one extra map. Baking MonoSH-compatible lightmaps requires the external Bakery plugin.</li>
+</ul>
+</li>
+<li>Added <a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/graph/event-nodes/#onlanguagechanged">OnLanguageChanged</a> Udon event that gets called on join and when users select a new display language.</li>
+<li>Added an info-level message in the SDK build panel that encourages using Kaiser mipmapping for higher clarity.<!-- -->
+<ul>
+<li>We talked about the new DPID mipmapping algorithm <a href="https://ask.vrchat.com/t/developer-update-11-july-2024/25514#mipmapping-experiments-8" target="_blank" rel="noopener noreferrer">in a dev update</a> before. This is a first step towards that - though the algorithm is not included yet, so this will recommend default Unity Kaiser mips for now.</li>
+</ul>
+</li>
+<li>Added a gizmo to <code>VRCSceneDescriptor</code> to visualize the respawn height.</li>
+<li>The VRC Scene Descriptor now shows a gizmo in your scene for each spawn defined in the spawns list.</li>
+<li>Auto-converting Dynamic Bones components into PhysBones is now required before uploading.</li>
+<li>Implemented some new player state APIs available via Udon:<!-- -->
+<ul>
+<li>event <a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/graph/event-nodes/#onplayersuspendchanged"><code>OnPlayerSuspendChanged(VRCPlayerApi player)</code></a></li>
+<li>event <a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/networking/network-components#onmastertransferred"><code>OnMasterTransferred(VRCPlayerApi newMaster)</code></a></li>
+<li><a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/networking/network-components#networking-properties"><code>VRCPlayerApi Networking.Master { get; }</code></a></li>
+<li><a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/networking/network-components#networking-properties"><code>VRCPlayerApi Networking.InstanceOwner { get; }</code></a></li>
+<li><a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/players/#get-issuspended"><code>bool VRCPlayerApi.isSuspended { get; }</code></a></li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="vrchat-constraints">VRChat Constraints<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-0#vrchat-constraints" class="hash-link" aria-label="VRChat Constraints への直接リンク" title="VRChat Constraints への直接リンク">​</a></h2>
+<p>VRChat Constraints are a full-featured replacement for Unity's built-in "Constraint" components. These are available to use on avatars. Existing constraint setups can be auto-converted.</p>
+<p>In the client, all constraints will be auto-converted on load, but it is still recommended to use the SDK option to do so, as it allows direct testing and even further improved performance.</p>
+<p>VRChat Constraints are supported on Mobile avatars! Check out our updated <a href="https://horo5502.github.io/creator-docs_ja/avatars/avatar-performance-ranking-system">performance rank page</a> for limits.</p>
+<p>VRChat Constraints also have a few unique features, like native "world constraints". Go check out <a href="https://horo5502.github.io/creator-docs_ja/avatars/avatar-dynamics/constraints/">the extensive documentation</a> for more info!</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes">Fixes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-0#fixes" class="hash-link" aria-label="Fixes への直接リンク" title="Fixes への直接リンク">​</a></h2>
+<ul>
+<li>Fixed issue with broken input events in ClientSim, addressing <a href="https://feedback.vrchat.com/admin/feedback/sdk-bug-reports/p/sdk-361-broke-inputgetkey?boards=sdk-bug-reports" target="_blank" rel="noopener noreferrer">this Canny issue</a>.</li>
+<li>Fixed world uploads failing in some cases when using inline sprites in TextMeshPro labels.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="breaking-api-changes">Breaking API Changes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-0#breaking-api-changes" class="hash-link" aria-label="Breaking API Changes への直接リンク" title="Breaking API Changes への直接リンク">​</a></h2>
+<p>As the minor version bump indicates, <code>3.7.0</code> contains breaking changes for user tooling. In particular, all exposed information and APIs related to <em>DynamicBones</em> have been removed without replacement. As uploading with DynamicBones is no longer supported, user tooling should be updated to reflect that and only support PhysBones going forward.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes--changes-relative-to-362-beta1">Fixes &amp; Changes relative to <code>3.6.2-beta.1</code><a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-0#fixes--changes-relative-to-362-beta1" class="hash-link" aria-label="fixes--changes-relative-to-362-beta1 への直接リンク" title="fixes--changes-relative-to-362-beta1 への直接リンク">​</a></h2>
+<p>This supercedes the <code>3.6.2</code> series.</p>
+<ul>
+<li>Improved stability of the new editor panels.</li>
+<li>Fixed some issues displaying code-generated avatar asset files, as many community tools do.</li>
+<li>Fixed avatar expression menu missing parameters between SDK upgrades and restarts.</li>
+<li>Fixed empty control names being incorrectly overwritten with "New Control".</li>
+<li>Fixed boolean Toggle menu entries not working as expected in-game (toggles created in <code>3.6.2-beta.1</code> or <code>3.6.2-constraints.4</code> may need to be recreated).</li>
+<li>Sub-assets of expression menus will now copy the target parameter object from the root asset if set.</li>
+<li>Fixed network IDs not being displayed in the Scene Descriptor inspector.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes--changes-in-370-beta2">Fixes &amp; Changes in <code>3.7.0-beta.2</code><a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-0#fixes--changes-in-370-beta2" class="hash-link" aria-label="fixes--changes-in-370-beta2 への直接リンク" title="fixes--changes-in-370-beta2 への直接リンク">​</a></h2>
+<ul>
+<li>Fixed inconsistent loading of Expression Menu and Parameter icons in editor.</li>
+<li>Fixed issue that caused Diffuse and BumpedDiffuse mobile shaders to appear all white.</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="constraints-fixes">Constraints Fixes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-0#constraints-fixes" class="hash-link" aria-label="Constraints Fixes への直接リンク" title="Constraints Fixes への直接リンク">​</a></h4>
+<ul>
+<li>
+<p>Fixed rotation constraints locked in exactly one axis sometimes appearing at the wrong rotation. (Woo, gimbal lock.)</p>
+</li>
+<li>
+<p>Fixed parent constraints potentially shifting in the SDK when Activate is pressed.</p>
+</li>
+<li>
+<p>Improved stability for constraints that reference one another in a loop.</p>
+</li>
+<li>
+<p>Fixed more issues with super-low weight constraints.</p>
+</li>
+<li>
+<p>Fixed offsets not always being calculated correctly for unlocked VRChat position constraints.</p>
+</li>
+<li>
+<p>Made corrections to how aim and look-at constraints behave when they are solving in local space.</p>
+</li>
+<li>
+<p>Fixed constraint sources losing their references when selecting multiple VRChat constraints and editing their sources lists at the same time.</p>
+</li>
+<li>
+<p>Improved support for community made tools interacting with the constraints auto-converter in the SDK.</p>
+<ul>
+<li>Please refer to <a href="https://horo5502.github.io/creator-docs_ja/avatars/avatar-dynamics/constraints/#editor-tooling-info">our documentation</a> for more info.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes--changes-in-the-final-version">Fixes &amp; Changes in the final version<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-0#fixes--changes-in-the-final-version" class="hash-link" aria-label="Fixes &amp; Changes in the final version への直接リンク" title="Fixes &amp; Changes in the final version への直接リンク">​</a></h2>
+<ul>
+<li>Further adjustments to the exposed API for constraints. Refer to the <a href="https://horo5502.github.io/creator-docs_ja/avatars/avatar-dynamics/constraints/#editor-tooling-info">constraints documentation</a> for more info.<!-- -->
+<ul>
+<li>This includes a parameter to indicate if a conversion was triggered by clicking "Auto-Fix".</li>
+</ul>
+</li>
+<li>Improved parameter assignment for submenus in the expression menu editor.</li>
+<li>Fixed incorrect LFS references in .dylib files.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="known-issues">Known Issues<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-7-0#known-issues" class="hash-link" aria-label="Known Issues への直接リンク" title="Known Issues への直接リンク">​</a></h2>
+<ul>
+<li>The first time you open a Scene and select a GameObject inside a prefab with a U# Behaviour, the GUI for the component directly below that U# Behaviour will not show its GUI. Deselecting and re-selecting the prefab fixes this.</li>
+<li>Buffer Particles don't work as they did in Unity 2019, <a href="https://x.com/hfcRedddd/status/1696915379090604179" target="_blank" rel="noopener noreferrer">there is a workaround to fix them from community member hfcRed here</a>.</li>
+<li>Unity 2022 sometimes causes Rider's debugger to stop for unhandled exceptions in Unity's IMGUI.<!-- -->
+<ul>
+<li>Please refer to <a href="https://forum.unity.com/threads/rider-debugger-breaks-on-unhandled-exception.1135879/#post-7305256" target="_blank" rel="noopener noreferrer">this workaround</a> and <a href="https://youtrack.jetbrains.com/issue/RIDER-64944" target="_blank" rel="noopener noreferrer">Jetbrains's bug tracker</a> for more information.</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+            <category>release</category>
+        </item>
+        <item>
+            <title><![CDATA[Release 3.6.2-beta.2]]></title>
+            <link>https://horo5502.github.io/creator-docs_ja/releases/release-3-6-2</link>
+            <guid>https://horo5502.github.io/creator-docs_ja/releases/release-3-6-2</guid>
+            <pubDate>Tue, 23 Jul 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-6-2#summary" class="hash-link" aria-label="Summary への直接リンク" title="Summary への直接リンク">​</a></h2>
+<p>This update adds AI Navigation, improves Avatar editor panels, implements new Player State APIs, fixes input events in ClientSim, and fixes World uploads failing when using inline sprites.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-features">New features<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-6-2#new-features" class="hash-link" aria-label="New features への直接リンク" title="New features への直接リンク">​</a></h2>
+<ul>
+<li>This release integrates <a href="https://docs.unity3d.com/Packages/com.unity.ai.navigation@1.1/manual/index.html" target="_blank" rel="noopener noreferrer">Unity 2022's AI Navigation</a> package, which allows you to create non-player characters (NPCs) that can intelligently move around the game world, using navigation meshes that are created automatically from your Scene geometry.<!-- -->
+<ul>
+<li>As the VRChat SDK now includes a reference to the AI navigation package, an "AI Navigation" window appears when you upgrade your scene. You can close it by right-clicking and selecting "Close."</li>
+<li>We published <a href="https://creators.vrchat.com/worlds/udon/ai-navigation/" target="_blank" rel="noopener noreferrer">AI Navigation documentation for VRChat Worlds</a> and an <a href="https://creators.vrchat.com/worlds/examples/ai-navigation-example/" target="_blank" rel="noopener noreferrer">AI Navigation Example Scene</a> to help you get started.</li>
+</ul>
+</li>
+<li>Some Avatar editor panels have been updated:<!-- -->
+<ul>
+<li>The Expression Parameters and Expressions Menu editors have been rebuilt from the ground up.</li>
+<li>The updated Expression Parameters editor:<!-- -->
+<ul>
+<li>Allows you to reorder elements via drag &amp; drop easily</li>
+<li>Uses a progress bar style meter to indicate how many synced bytes the parameters use</li>
+<li>The Expression Parameters assets now have a new icon, making them easier to see in your Assets folder</li>
+</ul>
+</li>
+<li>The updated Expressions Menu editor:<!-- -->
+<ul>
+<li>Shows the current Menu Controls count alongside the maximum number of Controls you can add</li>
+<li>Shows the types of each Control at-a-glance</li>
+<li>Allows you to reorder the Controls via drag &amp; drop easily</li>
+<li>Has improved and updated warnings and errors</li>
+<li>Has improved layout for editing all the Control types</li>
+<li>For Sub-Menu Controls - allows for quick creation of a new Menu asset and provides a button to open the editor for the submenu with a single click</li>
+<li>The Expressions Menu assets now have a new icon, so they're easier to see in your Assets folder</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The VRC Scene Descriptor now shows a gizmo in your scene for each spawn defined in the spawns list.</li>
+<li>The SDK now blocks uploads if the last built avatar exceeds the new reduced download or uncompressed size limits for Avatars.</li>
+<li>Implemented some new player state APIs available via Udon:<!-- -->
+<ul>
+<li>event <a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/graph/event-nodes/#onplayersuspendchanged"><code>OnPlayerSuspendChanged(VRCPlayerApi player)</code></a></li>
+<li>event <a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/networking/network-components#onmastertransferred"><code>OnMasterTransferred(VRCPlayerApi newMaster)</code></a></li>
+<li><a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/networking/network-components#networking-properties"><code>VRCPlayerApi Networking.Master { get; }</code></a></li>
+<li><a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/networking/network-components#networking-properties"><code>VRCPlayerApi Networking.InstanceOwner { get; }</code></a></li>
+<li><a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/players/#get-issuspended"><code>bool VRCPlayerApi.isSuspended { get; }</code></a></li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes">Fixes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-6-2#fixes" class="hash-link" aria-label="Fixes への直接リンク" title="Fixes への直接リンク">​</a></h2>
+<ul>
+<li>Fixed issue with broken input events in ClientSim, addressing <a href="https://feedback.vrchat.com/admin/feedback/sdk-bug-reports/p/sdk-361-broke-inputgetkey?boards=sdk-bug-reports" target="_blank" rel="noopener noreferrer">this Canny issue</a>.</li>
+<li>Fixed world uploads failing in some cases when using inline sprites in TextMeshPro labels.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes-between-362-beta1-and-362-beta2">Fixes between 3.6.2-beta.1 and 3.6.2-beta.2<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-6-2#fixes-between-362-beta1-and-362-beta2" class="hash-link" aria-label="Fixes between 3.6.2-beta.1 and 3.6.2-beta.2 への直接リンク" title="Fixes between 3.6.2-beta.1 and 3.6.2-beta.2 への直接リンク">​</a></h2>
+<ul>
+<li>Improved stability of the new editor panels.</li>
+<li>Fixed avatar expression menu missing expression parameters between SDK upgrades and restarts.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="known-issues">Known Issues<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-6-2#known-issues" class="hash-link" aria-label="Known Issues への直接リンク" title="Known Issues への直接リンク">​</a></h2>
+<ul>
+<li>The first time you open a Scene and select a GameObject inside a prefab with a U# Behaviour, the GUI for the component directly below that U# Behaviour will not show its GUI. Deselecting and re-selecting the prefab fixes this.</li>
+<li>Buffer Particles don't work as they did in Unity 2019, <a href="https://x.com/hfcRedddd/status/1696915379090604179" target="_blank" rel="noopener noreferrer">there is a workaround to fix them from community member hfcRed here</a>.</li>
+<li>Unity 2022 sometimes causes Rider's debugger to stop for unhandled exceptions in Unity's IMGUI.<!-- -->
+<ul>
+<li>Please refer to <a href="https://forum.unity.com/threads/rider-debugger-breaks-on-unhandled-exception.1135879/#post-7305256" target="_blank" rel="noopener noreferrer">this workaround</a> and <a href="https://youtrack.jetbrains.com/issue/RIDER-64944" target="_blank" rel="noopener noreferrer">Jetbrains's bug tracker</a> for more information.</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+            <category>release</category>
+        </item>
+        <item>
+            <title><![CDATA[Release 3.6.1]]></title>
+            <link>https://horo5502.github.io/creator-docs_ja/releases/release-3-6-1</link>
+            <guid>https://horo5502.github.io/creator-docs_ja/releases/release-3-6-1</guid>
+            <pubDate>Wed, 29 May 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-6-1#summary" class="hash-link" aria-label="Summary への直接リンク" title="Summary への直接リンク">​</a></h2>
+<p>This release exposes additional <a href="https://horo5502.github.io/creator-docs_ja/worlds/components/textmeshpro">TextMesh Pro</a> components and other useful properties to Udon.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-features">New features<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-6-1#new-features" class="hash-link" aria-label="New features への直接リンク" title="New features への直接リンク">​</a></h2>
+<ul>
+<li>Exposed three new <a href="https://horo5502.github.io/creator-docs_ja/worlds/components/textmeshpro/">TextMeshPro</a> components to Udon.<!-- -->
+<ul>
+<li>Added <a href="https://horo5502.github.io/creator-docs_ja/worlds/components/textmeshpro/tmp_dropdown">TMP Dropdown</a>, <a href="https://horo5502.github.io/creator-docs_ja/worlds/components/textmeshpro/tmp_inputfield">TMP InputField</a>, and <a href="https://horo5502.github.io/creator-docs_ja/worlds/components/textmeshpro/tmp_text">TMP Text</a> to Udon.</li>
+<li>TextMeshProUGUI and TextMeshPro and exposed through <a href="https://horo5502.github.io/creator-docs_ja/worlds/components/textmeshpro/tmp_text">TMP Text</a>.</li>
+<li>VRChat will now open the on-screen keyboard when selecting a <a href="https://horo5502.github.io/creator-docs_ja/worlds/components/textmeshpro/tmp_inputfield">TMP InputField</a>.</li>
+</ul>
+</li>
+<li>Added two properties to <code>BaseVRCVideoPlayer</code> and exposed them to Udon.<!-- -->
+<ul>
+<li><code>int VideoWidth { get; }</code></li>
+<li><code>int VideoHeight { get; }</code></li>
+<li>These are also available in the subclasses <code>VRCUnityVideoPlayer</code> and <code>VRCAVProVideoPlayer</code>.</li>
+</ul>
+</li>
+<li>Added five voice-related getter methods to <code>VRCPlayerApi</code> and exposed them to Udon.<!-- -->
+<ul>
+<li><code>float GetVoiceGain()</code></li>
+<li><code>float GetVoiceDistanceNear()</code></li>
+<li><code>float GetVoiceDistanceFar()</code></li>
+<li><code>float GetVoiceVolumetricRadius()</code></li>
+<li><code>bool GetVoiceLowpass()</code></li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes">Fixes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-6-1#fixes" class="hash-link" aria-label="Fixes への直接リンク" title="Fixes への直接リンク">​</a></h2>
+<ul>
+<li>Worlds with vastly more renderers than materials will now build faster.</li>
+<li>Fixed a performance bottleneck when validating avatars after a local test build, especially when multiple avatars are present in the scene.</li>
+<li>Fixed some issues where the Network ID Utility could get confused about duplicate GameObject paths.<!-- -->
+<ul>
+<li>Note that it still is not recommended or fully supported to have networked objects share the same hierarchy paths!</li>
+</ul>
+</li>
+<li>Fixed a missing reference error locking up the build panel if an audio clip was deleted or missing from an VRC_AnimatorPlayAudio state behaviour on the avatar.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="changes-between-361-beta2-and-final-release">Changes between 3.6.1-beta.2 and final release<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-6-1#changes-between-361-beta2-and-final-release" class="hash-link" aria-label="Changes between 3.6.1-beta.2 and final release への直接リンク" title="Changes between 3.6.1-beta.2 and final release への直接リンク">​</a></h2>
+<ul>
+<li>Udon can now access the three new TextMeshPro components directly.<!-- -->
+<ul>
+<li>Only the properties listed in VRChat's documentation have been exposed.</li>
+<li>The previously new <code>VRC_TMP</code> wrapper components have been removed.</li>
+</ul>
+</li>
+<li>ClientSim: Udon behaviours instantiated via other Udon scripts will now initialize right away and have variables and functions ready.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="known-issues">Known Issues<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-6-1#known-issues" class="hash-link" aria-label="Known Issues への直接リンク" title="Known Issues への直接リンク">​</a></h2>
+<ul>
+<li>The first time you open a Scene and select a GameObject inside a prefab with a U# Behaviour, the GUI for the component directly below that U# Behaviour will not show its GUI. Deselecting and re-selecting the prefab fixes this.</li>
+<li>Buffer Particles don't work as they did in Unity 2019, <a href="https://x.com/hfcRedddd/status/1696915379090604179" target="_blank" rel="noopener noreferrer">there is a workaround to fix them from community member hfcRed here</a>.</li>
+<li>Unity 2022 sometimes causes Rider's debugger to stop for unhandled exceptions in Unity's IMGUI.<!-- -->
+<ul>
+<li>Please refer to <a href="https://forum.unity.com/threads/rider-debugger-breaks-on-unhandled-exception.1135879/#post-7305256" target="_blank" rel="noopener noreferrer">this workaround</a> and <a href="https://youtrack.jetbrains.com/issue/RIDER-64944" target="_blank" rel="noopener noreferrer">Jetbrains's bug tracker</a> for more information.</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+            <category>release</category>
+        </item>
+        <item>
+            <title><![CDATA[Release 3.6.0]]></title>
+            <link>https://horo5502.github.io/creator-docs_ja/releases/release-3-6-0</link>
+            <guid>https://horo5502.github.io/creator-docs_ja/releases/release-3-6-0</guid>
+            <pubDate>Fri, 26 Apr 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-6-0#summary" class="hash-link" aria-label="Summary への直接リンク" title="Summary への直接リンク">​</a></h2>
+<p>This release overhauls the World SDK UI, exposes new Udon functions, and fixes some issues across the SDK and ClientSim.</p>
+<p>Supercedes <a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-5-3">release 3.5.3</a>, which was available for beta testing but was not launched officially.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-features">New features<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-6-0#new-features" class="hash-link" aria-label="New features への直接リンク" title="New features への直接リンク">​</a></h2>
+<ul>
+<li>Big updates to the Worlds SDK for creators! This is a major update with a lot of additions including:<!-- -->
+<ul>
+<li>A rewrite of all almost all custom inspectors in the World's SDK.</li>
+<li>Updated HelpURLs (the question mark on a component) to <em>actually</em> taking you to the VRC docs (gasp).</li>
+<li>Properly added almost 20 components to the <strong>Add Component -&gt; VRChat</strong> section.</li>
+<li>The Two-Factor Authentication field in the SDK automatically submits once you enter six digits, instead of requiring you to press the Verify button.</li>
+</ul>
+</li>
+<li>World creators now have the ability to modify the value of <code>UnityEngine.Physics.bounceThreshold</code> via Udon. Addresses <a href="https://feedback.vrchat.com/feature-requests/p/allow-world-creators-to-change-physics-settings" target="_blank" rel="noopener noreferrer">this Canny request</a>.<!-- -->
+<ul>
+<li>This allows world creators to have better control over when objects should or shouldn't bounce, which can be important for physics-based worlds.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="changes">Changes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-6-0#changes" class="hash-link" aria-label="Changes への直接リンク" title="Changes への直接リンク">​</a></h2>
+<ul>
+<li>Layers 3, 6, and 7 are now reserved layers for VRChat. Previously, these were internally reserved by Unity and were freed up in Unity 2022.<!-- -->
+<ul>
+<li>VRChat now reserves them for internal use moving forward and will move any objects in this layer to the default layer. Reflected <a href="https://horo5502.github.io/creator-docs_ja/worlds/layers/#unitys-built-in-layers">here</a> in our creator docs.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes">Fixes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-6-0#fixes" class="hash-link" aria-label="Fixes への直接リンク" title="Fixes への直接リンク">​</a></h2>
+<ul>
+<li>Fixed the broken Standard Lite shader <strong>Emission</strong> feature.</li>
+<li>Fixed an error about failing to assign network IDs when trying to upload the default VRC world scene right after initialization.</li>
+<li>Fixed Unity warning when using the sample dynamic Robot Avatar from the VRChat Avatars SDK.</li>
+<li>Exposed missing string methods to Udon. Addresses <a href="https://feedback.vrchat.com/sdk-bug-reports/p/350-beta1-stringtrim-stringtrimstart-and-stringtrimend-are-not-exposed-to-udon-i" target="_blank" rel="noopener noreferrer">this Canny request</a>.<!-- -->
+<ul>
+<li>Certain variants of <code>Trim</code>, <code>TrimStart</code>, <code>TrimEnd</code>, and others were previously available in Unity 2019 but caused compilation issues in Unity 2022. This fixes those regressions.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="clientsim">ClientSim<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-6-0#clientsim" class="hash-link" aria-label="ClientSim への直接リンク" title="ClientSim への直接リンク">​</a></h2>
+<ul>
+<li>Fixed joystick drift issues by adding input axis deadzones. Addresses <a href="https://github.com/vrchat-community/ClientSim/issues/1" target="_blank" rel="noopener noreferrer">this GitHub issue</a>.</li>
+<li>Updated ClientSim to use IETF language codes instead of full language names to more accurately simulate VRChat's behavior.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="public-api-changes">Public API Changes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-6-0#public-api-changes" class="hash-link" aria-label="Public API Changes への直接リンク" title="Public API Changes への直接リンク">​</a></h2>
+<ul>
+<li>SDK methods from <code>ShaderValidation</code> have been moved into the <code>ValidationUtils</code> class.</li>
+<li>Method signatures from <code>ValidationUtils</code> have been modified. <strong>Anyone using these methods may need to update their code!</strong></li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes-between-353-beta2-and-360-beta1">Fixes between 3.5.3-beta.2 and 3.6.0-beta.1<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-6-0#fixes-between-353-beta2-and-360-beta1" class="hash-link" aria-label="Fixes between 3.5.3-beta.2 and 3.6.0-beta.1 への直接リンク" title="Fixes between 3.5.3-beta.2 and 3.6.0-beta.1 への直接リンク">​</a></h2>
+<ul>
+<li>ClientSim input axis dead zones would make mouse movement awkwardly slow.</li>
+<li>World upload could fail with an <code>AmbiguousMatchException</code> when a scene contained components with multiple <code>RequireComponent</code> attributes.</li>
+<li>Calling <code>Instantiate</code> from Udon in certain events like <code>OnPlayerJoined</code> could fail in ClientSim.</li>
+<li>Pickups would not work in ClientSim.</li>
+<li>Canvas UI with <code>VRC_UiShape</code> components would not be interactable in ClientSim.</li>
+<li><code>VRC_ObjectSync</code> and <code>VRC_ObjectPool</code> would fail to initialize in ClientSim.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes-between-360-beta1-and-final-release">Fixes between 3.6.0-beta.1 and final release<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-6-0#fixes-between-360-beta1-and-final-release" class="hash-link" aria-label="Fixes between 3.6.0-beta.1 and final release への直接リンク" title="Fixes between 3.6.0-beta.1 and final release への直接リンク">​</a></h2>
+<ul>
+<li>Fixed an issue that could cause editor crashes with a memory allocation warning under rare circumstances.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="known-issues">Known Issues<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-6-0#known-issues" class="hash-link" aria-label="Known Issues への直接リンク" title="Known Issues への直接リンク">​</a></h2>
+<ul>
+<li>The first time you open a Scene and select a GameObject inside a prefab with a U# Behaviour, the GUI for the component directly below that U# Behaviour will not show its GUI. Deselecting and re-selecting the prefab fixes this.</li>
+<li>Buffer Particles don't work as they did in Unity 2019, <a href="https://x.com/hfcRedddd/status/1696915379090604179" target="_blank" rel="noopener noreferrer">there is a workaround to fix them from community member hfcRed here</a>.</li>
+<li>The Editor may crash when updating a shader graph reference by another shader using UsePass. This is an issue with Unity 2022.3.6f1 and is fixed in 2022.3.14f1.</li>
+<li>Unity 2022 sometimes causes Rider's debugger to stop for unhandled exceptions in Unity's IMGUI.<!-- -->
+<ul>
+<li>Please refer to <a href="https://forum.unity.com/threads/rider-debugger-breaks-on-unhandled-exception.1135879/#post-7305256" target="_blank" rel="noopener noreferrer">this workaround</a> and <a href="https://youtrack.jetbrains.com/issue/RIDER-64944" target="_blank" rel="noopener noreferrer">Jetbrains's bug tracker</a> for more information.</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+            <category>release</category>
+        </item>
+        <item>
+            <title><![CDATA[Release 3.5.2]]></title>
+            <link>https://horo5502.github.io/creator-docs_ja/releases/release-3-5-2</link>
+            <guid>https://horo5502.github.io/creator-docs_ja/releases/release-3-5-2</guid>
+            <pubDate>Wed, 27 Mar 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-5-2#summary" class="hash-link" aria-label="Summary への直接リンク" title="Summary への直接リンク">​</a></h2>
+<p>This release brings new functionality for avatar creators and various fixes.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-features">New features<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-5-2#new-features" class="hash-link" aria-label="New features への直接リンク" title="New features への直接リンク">​</a></h2>
+<ul>
+<li>Added the <a href="https://horo5502.github.io/creator-docs_ja/avatars/avatar-dynamics/vrc-headchop"><code>VRCHeadChop</code> component</a> to the avatars SDK.<!-- -->
+<ul>
+<li>This component allows avatar authors to control which parts of their avatar are hidden from the perspective of the user wearing it.</li>
+</ul>
+</li>
+<li>Added the <a href="https://horo5502.github.io/creator-docs_ja/avatars/state-behaviors#animator-play-audio"><code>AnimatorPlayAudio</code> state behaviour</a> to the avatars SDK.<!-- -->
+<ul>
+<li>This allows you to modify an AudioSource when transitioning to an animation state.</li>
+<li>It can change the audio clip, volume, pitch, or loop. It can also play or stop the AudioSource automatically.</li>
+</ul>
+</li>
+<li>Added new <a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/input-events/#oninputmethodchanged"><code>OnInputMethodChanged</code> Event to Udon</a>, which is triggered whenever the user switches Input Methods, from a Keyboard to a Game Controller, or a Game Controller to a Touchscreen, for example.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="changes">Changes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-5-2#changes" class="hash-link" aria-label="Changes への直接リンク" title="Changes への直接リンク">​</a></h2>
+<ul>
+<li>The worlds SDK will now suggest replacing Unity's default UI shader with a <a href="https://horo5502.github.io/creator-docs_ja/platforms/android/quest-content-limitations/#shaders">super-sampled shader</a> where appropriate.<!-- -->
+<ul>
+<li>This can help improve the readability of text elements when viewed in VR.</li>
+<li>TextMeshPro components are not affected by this change. Their readability is very high without supersampling.</li>
+</ul>
+</li>
+<li>Added <a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/data-containers/byte-and-bit-operations">Byte and Bit operations</a> to Udon.<!-- -->
+<ul>
+<li>Exposed <code>System.BitConverter</code>, <code>System.Buffer</code>, and <code>System.Text.Encoding</code> to Udon.</li>
+<li>Added <code>DataToken.BitCast</code> method.</li>
+</ul>
+</li>
+<li>Added <a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/string-loading">ResultBytes field to string downloader event</a> to allow raw data downloads.</li>
+<li>The avatars SDK now warns against using <a href="https://horo5502.github.io/creator-docs_ja/avatars/#write-defaults-on-states"><em>mixed</em> Write Defaults settings</a> across avatar animators.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes">Fixes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-5-2#fixes" class="hash-link" aria-label="Fixes への直接リンク" title="Fixes への直接リンク">​</a></h2>
+<ul>
+<li>If an Udon script uses <code>[RequireComponent]</code>, the SDK will now silence some harmless errors while building.</li>
+<li>Updated <code>UnityEngine.Timeline</code> package version &amp; added to base SDK package dependencies.</li>
+<li>Changed "Polygons" to "Triangles" in SDK avatar performance stats for a more accurate description of recommended limits.</li>
+<li>Fixed issues with <code>InputUse</code> Udon events firing constantly when using VRChat Mobile. They should now only fire when a genuine tap is done, not while swiping or long-pressing.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="clientsim">ClientSim<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-5-2#clientsim" class="hash-link" aria-label="ClientSim への直接リンク" title="ClientSim への直接リンク">​</a></h2>
+<ul>
+<li>Added <a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/players/#language">all languages supported by VRChat</a>.</li>
+<li>Added support for <a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/players/player-avatar-scaling">player scaling APIs</a>.</li>
+<li>Fixed EditorOnly objects not getting removed in Play Mode.</li>
+<li>The stacked camera is now enabled/disabled depending on the state of the pause menu to improve performance.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="known-issues">Known Issues<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-5-2#known-issues" class="hash-link" aria-label="Known Issues への直接リンク" title="Known Issues への直接リンク">​</a></h2>
+<ul>
+<li>The first time you open a Scene and select a GameObject inside a prefab with a U# Behaviour, the GUI for the component directly below that U# Behaviour will not show its GUI. Deselecting and re-selecting the prefab fixes this.</li>
+<li>Buffer Particles don't work as they did in Unity 2019, <a href="https://x.com/hfcRedddd/status/1696915379090604179" target="_blank" rel="noopener noreferrer">there is a workaround to fix them from community member hfcRed here</a>.</li>
+<li>The Editor may crash when updating a shader graph reference by another shader using UsePass. This is an issue with Unity 2022.3.6f1 and is fixed in 2022.3.14f1.</li>
+<li>Unity 2022 sometimes causes Rider's debugger to stop for unhandled exceptions in Unity's IMGUI.<!-- -->
+<ul>
+<li>Please refer to <a href="https://forum.unity.com/threads/rider-debugger-breaks-on-unhandled-exception.1135879/#post-7305256" target="_blank" rel="noopener noreferrer">this workaround</a> and <a href="https://youtrack.jetbrains.com/issue/RIDER-64944" target="_blank" rel="noopener noreferrer">Jetbrains's bug tracker</a> for more information.</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+            <category>release</category>
+        </item>
+        <item>
+            <title><![CDATA[Release 3.5.1]]></title>
+            <link>https://horo5502.github.io/creator-docs_ja/releases/release-3-5-1</link>
+            <guid>https://horo5502.github.io/creator-docs_ja/releases/release-3-5-1</guid>
+            <pubDate>Tue, 20 Feb 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-5-1#summary" class="hash-link" aria-label="Summary への直接リンク" title="Summary への直接リンク">​</a></h2>
+<p>This release contains multiple Unity 2022 follow-up fixes and overall quality-of-life improvements.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-features">New features<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-5-1#new-features" class="hash-link" aria-label="New features への直接リンク" title="New features への直接リンク">​</a></h2>
+<ul>
+<li>New methods have been added to the Worlds SDK. These methods were previously only available to Creator Economy sellers but can now be used by all world creators.<!-- -->
+<ul>
+<li>Store.OpenGroupPage: Opens a group page based on its <code>grp_</code> ID.</li>
+<li>Store.OpenGroupStorePage: Opens a seller's store page.</li>
+<li>Store.OpenGroupListing: Open a seller's listing.</li>
+</ul>
+</li>
+<li>Various features for sellers have been added to the Worlds SDK.<!-- -->
+<ul>
+<li>These features cannot be used in an uploaded world unless you are a seller.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="changes">Changes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-5-1#changes" class="hash-link" aria-label="Changes への直接リンク" title="Changes への直接リンク">​</a></h2>
+<ul>
+<li>The VRChat SDK now automatically enables "Clamp BlendShape Weights" option in VRChat projects. This mirrors VRChat Client behaviour and prevents BlendShapes from moving beyond their maximum (100) offset.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes">Fixes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-5-1#fixes" class="hash-link" aria-label="Fixes への直接リンク" title="Fixes への直接リンク">​</a></h2>
+<ul>
+<li>Fixed spatialized audio sources creating warnings when entering play mode or adjusting their settings. Users might be prompted to restart their editor when adding the 3.5.1 SDK for the first time.</li>
+<li>Fixed upload speed increase logic breaking on macOS/Linux, preventing users from uploading.</li>
+<li>Fixed an issue where the SDK would not detect if the blueprint ID of a world / avatar is taken by another user or invalid, and attempt to upload a new world / avatar to that ID. That would result in an "Application Error" message. The blueprint ID is now cleared correctly in this case.</li>
+<li>Fixed an issue where builds that went above the upload limit, e.g. 10 MB for Android Avatars, reported the size incorrectly. The SDK now correctly shows all the decimal points for the size. You should no longer see error messages like "10.00 MB &gt; 10.00 MB".</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="known-issues">Known Issues<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-5-1#known-issues" class="hash-link" aria-label="Known Issues への直接リンク" title="Known Issues への直接リンク">​</a></h2>
+<ul>
+<li>The first time you open a Scene and select a GameObject inside a prefab with a U# Behaviour, the GUI for the component directly below that U# Behaviour will not show its GUI. Deselecting and re-selecting the prefab fixes this.</li>
+<li>Buffer Particles don't work as they did in Unity 2019, <a href="https://x.com/hfcRedddd/status/1696915379090604179" target="_blank" rel="noopener noreferrer">there is a workaround to fix them from community member hfcRed here</a>.</li>
+<li>The Editor may crash when updating a shader graph reference by another shader using UsePass. This is an issue with Unity 2022.3.6f1 and is fixed in 2022.3.14f1.</li>
+<li>Unity 2022 sometimes causes Rider's debugger to stop for unhandled exceptions in Unity's IMGUI.<!-- -->
+<ul>
+<li>Please refer to <a href="https://forum.unity.com/threads/rider-debugger-breaks-on-unhandled-exception.1135879/#post-7305256" target="_blank" rel="noopener noreferrer">this workaround</a> and <a href="https://youtrack.jetbrains.com/issue/RIDER-64944" target="_blank" rel="noopener noreferrer">Jetbrains's bug tracker</a> for more information.</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+            <category>release</category>
+        </item>
+        <item>
+            <title><![CDATA[Release 3.5.0]]></title>
+            <link>https://horo5502.github.io/creator-docs_ja/releases/release-3-5-0</link>
+            <guid>https://horo5502.github.io/creator-docs_ja/releases/release-3-5-0</guid>
+            <pubDate>Fri, 08 Dec 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-5-0#summary" class="hash-link" aria-label="Summary への直接リンク" title="Summary への直接リンク">​</a></h2>
+<p>This is the first SDK that works with Unity 2022!</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="notes-on-usage">Notes on Usage<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-5-0#notes-on-usage" class="hash-link" aria-label="Notes on Usage への直接リンク" title="Notes on Usage への直接リンク">​</a></h2>
+<p>You will need to update your Creator Companion to version 2.2.0 in order to manage the 2022-based Unity Editor and make 2022-compatible projects. You can check your current version by clicking on "Settings" and looking in the upper-right corner.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-features">New Features<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-5-0#new-features" class="hash-link" aria-label="New Features への直接リンク" title="New Features への直接リンク">​</a></h2>
+<ul>
+<li>There is a new "Default VRChat Scene" that you can choose when making a new scene which has all the basics needed for a VRChat World.</li>
+<li><code>OnScreenUpdateEvent</code> is a new event triggered in Udon when a player visits on a mobile device. It contains information about the Orientation and Resolution of the screen when they first enter the world, and whenever the Orientation of their device changes.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="changes">Changes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-5-0#changes" class="hash-link" aria-label="Changes への直接リンク" title="Changes への直接リンク">​</a></h2>
+<ul>
+<li>Switches from .NET Framework 4.x to .NET Standard 2.1.</li>
+<li>Restores UdonSharp Samples, now  listed under World Samples.</li>
+<li>Restores UdonSharp and ClientSim legacyFiles.</li>
+<li>Now you can add <a href="https://horo5502.github.io/creator-docs_ja/avatars/avatar-impostors#vrcimpostorsettings">VRC Impostor Settings</a> Component!</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="known-issues">Known Issues<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-5-0#known-issues" class="hash-link" aria-label="Known Issues への直接リンク" title="Known Issues への直接リンク">​</a></h2>
+<ul>
+<li>The first time you open a Scene and select a GameObject inside a prefab with a U# Behaviour, the GUI for the component directly below that U# Behaviour will not show its GUI. Deselecting and re-selecting the prefab fixes this.</li>
+<li>Buffer Particles don't work as they did in Unity 2019, <a href="https://x.com/hfcRedddd/status/1696915379090604179" target="_blank" rel="noopener noreferrer">there is a workaround to fix them from community member hfcRed here</a>.</li>
+<li>The Editor may crash when updating a shader graph reference by another shader using UsePass. This is an issue with Unity 2022.3.6f1 and is fixed in 2022.3.14f1.</li>
+<li>Unity 2022 sometimes causes Rider's debugger to stop for unhandled exceptions in Unity's IMGUI.<!-- -->
+<ul>
+<li>Please refer to <a href="https://forum.unity.com/threads/rider-debugger-breaks-on-unhandled-exception.1135879/#post-7305256" target="_blank" rel="noopener noreferrer">this workaround</a> and <a href="https://youtrack.jetbrains.com/issue/RIDER-64944" target="_blank" rel="noopener noreferrer">Jetbrains's bug tracker</a> for more information.</li>
+</ul>
+</li>
+<li>Spatialized Audio Sources can create warnings when entering playmode or adjusting their settings.</li>
+</ul>]]></content:encoded>
+            <category>release</category>
+        </item>
+        <item>
+            <title><![CDATA[Release 3.4.2]]></title>
+            <link>https://horo5502.github.io/creator-docs_ja/releases/release-3-4-2</link>
+            <guid>https://horo5502.github.io/creator-docs_ja/releases/release-3-4-2</guid>
+            <pubDate>Tue, 05 Dec 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-4-2#summary" class="hash-link" aria-label="Summary への直接リンク" title="Summary への直接リンク">​</a></h2>
+<p>This update fixes an issue where legacy folders were not removed as part of migrating a project which used the old Assets-based SDK.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="changes">Changes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-4-2#changes" class="hash-link" aria-label="Changes への直接リンク" title="Changes への直接リンク">​</a></h2>
+<ul>
+<li>Adds all the 'legacyFolders' from the UdonSharp and ClientSim packages into the Worlds package.</li>
+</ul>]]></content:encoded>
+            <category>release</category>
+        </item>
+        <item>
+            <title><![CDATA[Release 3.4.1]]></title>
+            <link>https://horo5502.github.io/creator-docs_ja/releases/release-3-4-1</link>
+            <guid>https://horo5502.github.io/creator-docs_ja/releases/release-3-4-1</guid>
+            <pubDate>Fri, 13 Oct 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-4-1#summary" class="hash-link" aria-label="Summary への直接リンク" title="Summary への直接リンク">​</a></h2>
+<p>This update addresses post-3.4.0 issues and makes minor usability improvements to the SDK.</p>
+<div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>注意</div><div class="admonitionContent_BuS1"><p>Make sure you update to <a href="https://vcc.docs.vrchat.com/news/release-2.1.6" target="_blank" rel="noopener noreferrer">Creator Companion 2.1.6</a> or higher before updating to this version of the SDK!</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="changes">Changes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-4-1#changes" class="hash-link" aria-label="Changes への直接リンク" title="Changes への直接リンク">​</a></h2>
+<ul>
+<li>Fixes an issue causing the SDK to fail to upload with a "Missing Credentials" error.</li>
+<li>Fixes an issue where avatars without Animators would break the validation messages in the SDK Builder Panel. Addresses <a href="https://feedback.vrchat.com/sdk-bug-reports/p/add-a-message-to-the-sdk-window-about-missing-animator-component-when-it-is-miss" target="_blank" rel="noopener noreferrer">this Canny</a>.</li>
+<li>Changes "Last Updated" time to show Local Time instead of UTC. Addresses <a href="https://feedback.vrchat.com/sdk-bug-reports/p/label-last-updated-date-and-time-in-upload-panel-as-utc" target="_blank" rel="noopener noreferrer">this Canny</a>.</li>
+</ul>]]></content:encoded>
+            <category>release</category>
+        </item>
+        <item>
+            <title><![CDATA[Release 3.4.0]]></title>
+            <link>https://horo5502.github.io/creator-docs_ja/releases/release-3-4-0</link>
+            <guid>https://horo5502.github.io/creator-docs_ja/releases/release-3-4-0</guid>
+            <pubDate>Wed, 04 Oct 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-4-0#summary" class="hash-link" aria-label="Summary への直接リンク" title="Summary への直接リンク">​</a></h2>
+<p>This update merges the ClientSim and UdonSharp packages into the Worlds package so they will be available in all projects moving forward. It also updates the Content Tags available in the Build panel to support the new <a href="https://hello.vrchat.com/blog/content-gating" target="_blank" rel="noopener noreferrer">Content Gating system</a>.</p>
+<div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>注意</div><div class="admonitionContent_BuS1"><p>Make sure you update to <a href="https://vcc.docs.vrchat.com/news/release-2.1.6" target="_blank" rel="noopener noreferrer">Creator Companion 2.1.6</a> or higher before updating to this version of the SDK!</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="changes">Changes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-4-0#changes" class="hash-link" aria-label="Changes への直接リンク" title="Changes への直接リンク">​</a></h2>
+<ul>
+<li>UdonSharp and ClientSim are now both included in the Worlds package within the "Integrations" folder.</li>
+<li>UdonSharp and ClientSim added as "legacyPackages" in the Worlds package manifest to have the Creator Companion and Resolver properly remove them.</li>
+<li>Fixed an issue where Unity Editor would constantly use more memory if Thumbnail "Capture From Scene" is left enabled while tabbed out to a different window.</li>
+<li>Updates Content Tags from "Nudity/Sexuality", "Realistic Violence", "Blood/Gore", "Other NSFW" to "Sexually Suggestive", "Graphic Violence", "Extreme Horror", "Adult Language and Themes" and "Excessive Gore".</li>
+<li>SerializedUdonProgram now uses compressed byte[] instead of base64 string. This avoids a giant string allocation in some worlds which persisted until the world was exited.</li>
+<li>Restores the checkbox for the rights statement within the Build panel.</li>
+<li>Timeout for SDK uploads increased from 30 seconds to 1 hour, addresses <a href="https://feedback.vrchat.com/sdk-bug-reports/p/upload-timeout-in-vrcsdk-330-is-too-short" target="_blank" rel="noopener noreferrer">this Canny</a>.</li>
+</ul>]]></content:encoded>
+            <category>release</category>
+        </item>
+        <item>
+            <title><![CDATA[Release 3.3.0]]></title>
+            <link>https://horo5502.github.io/creator-docs_ja/releases/release-3-3-0</link>
+            <guid>https://horo5502.github.io/creator-docs_ja/releases/release-3-3-0</guid>
+            <pubDate>Mon, 11 Sep 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary]]></description>
+            <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-3-0#summary" class="hash-link" aria-label="Summary への直接リンク" title="Summary への直接リンク">​</a></h3>
+<p>This release reworks the main user interface for the VRChat SDK (the 'Build panel'). It includes a new UI, quality-of-life improvements, and easier ways to build and update your content.</p>
+<p>This update also adds support for the new 'Maximum capacity' and 'Recommended capacity' settings for worlds. You can learn more about these settings <a href="https://horo5502.github.io/creator-docs_ja/worlds/creating-your-first-world/#step-5---building-your-world">in our documentation</a>.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changes">Changes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-3-0#changes" class="hash-link" aria-label="Changes への直接リンク" title="Changes への直接リンク">​</a></h3>
+<ul>
+<li>Fully rebuilt the SDK Builder panel with new UI and features</li>
+<li>Uploading Worlds and Avatars no longer requires entering Play Mode</li>
+<li>Updating the thumbnail no longer requires a full content rebuild and reupload</li>
+<li>You can now select any file to be uploaded as a thumbnail</li>
+<li>Standardized public API has been added for tool developers</li>
+<li>Content Manager now marks the currently selected world and allows quickly setting any uploaded world as current</li>
+<li>Countless bug fixes and improvements across Worlds and Avatars SDKs</li>
+<li>Adds the <a href="https://horo5502.github.io/creator-docs_ja/avatars/avatar-impostors#vrcimpostorsettings">VRC Impostor Settings</a> component to the avatars SDK.<!-- -->
+<ul>
+<li>However, you cannot attach this component manually for now.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="important-note-for-tool-developers">Important note for Tool Developers<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-3-0#important-note-for-tool-developers" class="hash-link" aria-label="Important note for Tool Developers への直接リンク" title="Important note for Tool Developers への直接リンク">​</a></h3>
+<p>If you're making tools that integrate with VRChat SDK - this is an important release, as it makes quite substantial changes to the SDK internals.</p>
+<p>We now also provide public APIs for you to integrate with, and we highly recommend migrating your tools to utilize them if you were relying on reflection or similar techniques before.</p>
+<p><a href="https://horo5502.github.io/creator-docs_ja/sdk/public-sdk-api">You can read more about the Public SDK APIs here</a>.</p>]]></content:encoded>
+            <category>release</category>
+        </item>
+        <item>
+            <title><![CDATA[ClientSim 1.2.7]]></title>
+            <link>https://horo5502.github.io/creator-docs_ja/releases/clientsim-release-1.2.7</link>
+            <guid>https://horo5502.github.io/creator-docs_ja/releases/clientsim-release-1.2.7</guid>
+            <pubDate>Tue, 22 Aug 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://horo5502.github.io/creator-docs_ja/releases/clientsim-release-1.2.7#summary" class="hash-link" aria-label="Summary への直接リンク" title="Summary への直接リンク">​</a></h2>
+<p>Adds stub methods for Avatar Scaling</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changes">Changes<a href="https://horo5502.github.io/creator-docs_ja/releases/clientsim-release-1.2.7#changes" class="hash-link" aria-label="Changes への直接リンク" title="Changes への直接リンク">​</a></h3>
+<ul>
+<li>Added methods to handle calls to Avatar Scaling from Udon, so they wouldn't log errors in the console or throw exceptions. Fixes <a href="https://github.com/vrchat-community/ClientSim/issues/98" target="_blank" rel="noopener noreferrer">#98</a> and <a href="https://github.com/vrchat-community/ClientSim/issues/101" target="_blank" rel="noopener noreferrer">#101</a>.</li>
+</ul>]]></content:encoded>
+            <category>release</category>
+        </item>
+        <item>
+            <title><![CDATA[Release 3.2.3]]></title>
+            <link>https://horo5502.github.io/creator-docs_ja/releases/release-3-2-3</link>
+            <guid>https://horo5502.github.io/creator-docs_ja/releases/release-3-2-3</guid>
+            <pubDate>Wed, 09 Aug 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary]]></description>
+            <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-2-3#summary" class="hash-link" aria-label="Summary への直接リンク" title="Summary への直接リンク">​</a></h3>
+<p>Adds "interaction passthrough" to the World Descriptor and fixes a bug in the Avatar Scaling Example Graph.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changes">Changes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-2-3#changes" class="hash-link" aria-label="Changes への直接リンク" title="Changes への直接リンク">​</a></h3>
+<ul>
+<li>Added a mask for "interaction passthrough" in the WorldDescriptor, so that world creators can allow interaction and grabs to occur through user defined layers. By default (Nothing) they will use the legacy behaviour, which was to always block interactions and grabs.<!-- -->
+<ul>
+<li>Note: This does not change the normal Unity behaviour that if a ray begins inside a collider, it ignores that collider. This means that desktop (which begins its ray from the center of the Player Capsule) will behave differently than VR, where the tracked hand can enter colliders that the Player Capsule cannot.</li>
+</ul>
+</li>
+<li>Updates the Avatar Scaling Example Graph to prevent errors when running without ClientSim or when building the world.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="features">Features<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-2-3#features" class="hash-link" aria-label="Features への直接�リンク" title="Features への直接リンク">​</a></h2>
+<ul>
+<li>Adds <code>VRCPlayerApi.GetAvailableLanguages()</code> and <code>VRCPlayerApi.GetCurrentLanguage()</code>. These methods are 'stubs' for now - providing default values in return rather than pulling the actual values until a future Client release. See <a href="https://creators.vrchat.com/worlds/udon/players/#language" target="_blank" rel="noopener noreferrer">the Language docs</a> for more info.</li>
+</ul>]]></content:encoded>
+            <category>release</category>
+        </item>
+        <item>
+            <title><![CDATA[Release 3.2.2]]></title>
+            <link>https://horo5502.github.io/creator-docs_ja/releases/release-3-2-2</link>
+            <guid>https://horo5502.github.io/creator-docs_ja/releases/release-3-2-2</guid>
+            <pubDate>Mon, 31 Jul 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary]]></description>
+            <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-2-2#summary" class="hash-link" aria-label="Summary への直接リンク" title="Summary への直接リンク">​</a></h3>
+<p>Adds Udon support for Avatar Scaling (along with an Udon Example) and enforces new Avatar Dynamic Component limits.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="requires-resolver-0120">Requires Resolver 0.1.20!<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-2-2#requires-resolver-0120" class="hash-link" aria-label="Requires Resolver 0.1.20! への直接リンク" title="Requires Resolver 0.1.20! への直接リンク">​</a></h2>
+<p>You may see warnings or errors about conflicting package versions for Newtonsoft.Json until you update the resolver with the Creator Companion.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changes">Changes<a href="https://horo5502.github.io/creator-docs_ja/releases/release-3-2-2#changes" class="hash-link" aria-label="Changes への直接リンク" title="Changes への直接リンク">​</a></h3>
+<ul>
+<li>Adds <a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/players/player-avatar-scaling">Player Avatar Scaling</a> and <a href="https://horo5502.github.io/creator-docs_ja/worlds/udon/avatar-events">Avatar Events</a> to integrate with the new Avatar Scaling system.</li>
+<li>Includes new limits for avatar dynamic components. The SDK will give a build error if you exceed these:<!-- -->
+<ul>
+<li>VRCPhysBone: 256 Max</li>
+<li>VRCPhysBoneCollider: 256 Max</li>
+<li>VRCContact: 256 Max</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+            <category>release</category>
+        </item>
+        <item>
+            <title><![CDATA[ClientSim 1.2.6]]></title>
+            <link>https://horo5502.github.io/creator-docs_ja/releases/clientsim-release-1.2.6</link>
+            <guid>https://horo5502.github.io/creator-docs_ja/releases/clientsim-release-1.2.6</guid>
+            <pubDate>Fri, 23 Jun 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://horo5502.github.io/creator-docs_ja/releases/clientsim-release-1.2.6#summary" class="hash-link" aria-label="Summary への直接リンク" title="Summary への直接リンク">​</a></h2>
+<p>Added Camera Stacking and made it easier to run a scene without a Scene Descriptor.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changes">Changes<a href="https://horo5502.github.io/creator-docs_ja/releases/clientsim-release-1.2.6#changes" class="hash-link" aria-label="Changes への直接リンク" title="Changes への直接リンク">​</a></h3>
+<ul>
+<li>Added Camera Stacking, in order to fix issues where ClientSim menu is rendered behind world UI <a href="https://github.com/vrchat-community/ClientSim/issues/51" target="_blank" rel="noopener noreferrer">Issue 51</a> <a href="https://github.com/vrchat-community/ClientSim/issues/58" target="_blank" rel="noopener noreferrer">Issue 58</a></li>
+<li>ClientSim no longer forces you out of playmode when you don't have a scene descriptor <a href="https://github.com/vrchat-community/ClientSim/issues/60" target="_blank" rel="noopener noreferrer">Issue 60</a></li>
+</ul>]]></content:encoded>
+            <category>release</category>
+        </item>
+    </channel>
+</rss>

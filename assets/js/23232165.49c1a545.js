@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkVRChat_Creator_Docs=self.webpackChunkVRChat_Creator_Docs||[]).push([[8351],{74925:e=>{e.exports=JSON.parse('{"tags":[{"label":"release","permalink":"/creator-docs_ja/releases/tags/release","count":33}]}')}}]);

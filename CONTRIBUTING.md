@@ -1,1 +1,0 @@
-[http://horo5502.github.io/creator-docs_ja/how-to-contribute]をお読みください。
