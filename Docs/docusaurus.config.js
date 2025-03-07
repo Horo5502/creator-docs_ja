@@ -67,6 +67,14 @@ const config = {
           autoCollapseCategories: false,
         },
       },
+      announcementBar: {
+        id: 'translationnotyet',
+        content:
+            '<b>このドキュメントは鋭意翻訳中です。正確な情報は英語版をご覧ください。</b>',
+        backgroundColor: '#21af90',
+        textColor: '#000',
+        isCloseable: true,
+      },
       navbar: {
         title: 'VRChat CreatorDocs 非公式日本語翻訳',
         logo: {

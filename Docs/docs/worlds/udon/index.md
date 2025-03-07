@@ -3,33 +3,33 @@ sidebar_position: 1
 ---
 # Udon
 
-Udon allows players to interact with your world in interesting ways! Use scripts written by other creators, or create your own games, prefabs, and other experiences.
+Udonを使うと、プレイヤーがあなたのワールドと面白い方法でインタラクトできるようになります！他のクリエイターが書いたスクリプトを使ったり、自分で独自のゲームやプレハブ、その他の体験を制作したりできます。
 
-## What is Udon?
+## Udonとは何か？
 
-Udon is a programming language[^1] for VRChat worlds. Scripts can interact with scene objects, [players](./players), [synced networked variables](./networking), and more. Udon makes your world come to life!
+UdonはVRChatワールド用のプログラミング言語[^1]です。スクリプトはシーンオブジェクト、[プレイヤー](./players)、[同期されたネットワーク変数](./networking)などとインタラクトできます。Udonを使うと、あなたのワールドが生き生きとします！
 
-Udon runs in both VRChat *and* the Unity Editor. You can test and debug your scripts without needing to build and upload your VRChat world. You can also use [Udon's debugging features](debugging-udon-projects).
+UdonはVRChat *および* Unityエディターの両方で動作します。ワールドをビルドしてアップロードすることなく、スクリプトをテストしてデバッグできます。また、[Udonのデバッグ機能](debugging-udon-projects)も利用できます。
 
-After you [create your VRChat world](/sdk/), there are two main ways to create Udon scripts:
-- The [Udon Node Graph](./graph) is a visual programming interface that uses nodes and wires to connect flow, inputs, and outputs.
-	- The Graph is similar to Unity animators, Blender shaders, geometry nodes, or Unreal blueprints.
-	- The Graph is unique to the VRChat SDK does not require any third-party tools.
-	- Use the Graph if you're very new to programming or only want to create very simple scripts.
-- [UdonSharp](./udonsharp) allows you to use C# to create scripts.
-	- UdonSharp is similar to Unity's built-in C# scripting system.
-	- Most UdonSharp users use an [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment). [Visual Studio](https://visualstudio.microsoft.com/vs/unity-tools/) is free, and [Rider](https://www.jetbrains.com/rider/) is free for non-commercial use.
-	- Use UdonSharp if you're already familiar with programming or want to create powerful scripts.
+[VRChatワールドを制作した後](/sdk/)、Udonスクリプトを作成する主な方法は2つあります：
+- [Udon Node Graph](./graph)は、ノードとワイヤーを使ってフロー、入力、出力を接続するビジュアルプログラミングインターフェースです。
+  - GraphはUnityのアニメーター、Blenderのシェーダー、ジオメトリノード、Unrealのブループリントに似ています。
+  - GraphはVRChat SDKに特有で、サードパーティツールを必要としません。
+  - プログラミングが初めての方や、非常にシンプルなスクリプトだけを制作したい方はGraphを使ってください。
+- [UdonSharp](./udonsharp)を使うと、C#を使ってスクリプトを制作できます。
+  - UdonSharpはUnityの組み込みC#スクリプティングシステムに似ています。
+  - ほとんどのUdonSharpユーザーは[IDE](https://ja.wikipedia.org/wiki/%E7%B5%B1%E5%90%88%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83)を使用します。[Visual Studio](https://visualstudio.microsoft.com/ja/vs/unity-tools/)は無料で、[Rider](https://www.jetbrains.com/ja-jp/rider/)は非商用利用で無料です。
+  - すでにプログラミングに慣れている方や、強力なスクリプトを制作したい方はUdonSharpを使ってください。
 
 
-And if you're an expert user:
+そして、もしあなたが卓越したユーザーなら：
 
-- You can write your own compiler to generate Udon Assembly code.
-	- VRChat Udon is technically a [virtual machine](https://en.wikipedia.org/wiki/Virtual_machine) running bytecode compiled from Udon Assembly.
-	- You *can* write Udon Assembly code manually, though this is extremely uncommon.
+- 独自のコンパイラを書いてUdon Assemblyコードを生成できます。
+  - VRChat Udonは技術的にはUdon Assemblyからコンパイルされたバイトコードを実行する[仮想マシン](https://ja.wikipedia.org/wiki/%E4%BB%AE%E6%83%B3%E3%83%9E%E3%82%B7%E3%83%B3)です。
+  - Udon Assemblyコードを手動で書くことも*可能*ですが、これは非常に稀です。
 
-## Bug Reports and Feature Requests
-To submit bug reports or feature requests, use VRChat's [Canny feedback board](https://vrchat.canny.io/udon).
+## バグ報告と機能リクエスト
+バグ報告や機能リクエストを提出するには、VRChatの[Cannyフィードバックボード](https://vrchat.canny.io/udon)を使用してください。
 
-[^1]: For the more technically inclined: **VRChat Udon** is a VM running bytecode compiled from **Udon Assembly**. You can generate **Udon Assembly** using the built-in **VRChat Udon Node Graph** UI, writing your own **Udon Assembly**, or even by writing your own compiler to generate **Udon Assembly** or bytecode programs directly.
+[^1]: 技術に詳しい方へ：**VRChat Udon**は、**Udon Assembly**からコンパイルされたバイトコードを実行するVMです。**Udon Assembly**は、組み込みの**VRChat Udon Node Graph** UIを使用して生成したり、自分で**Udon Assembly**を書いたり、独自のコンパイラを作成して**Udon Assembly**やバイトコードプログラムを直接生成することもできます。
 
