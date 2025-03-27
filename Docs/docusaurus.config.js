@@ -70,7 +70,7 @@ const config = {
       announcementBar: {
         id: 'translationnotyet',
         content:
-            '<b>このドキュメントは鋭意翻訳中です。正確な情報は英語版をご覧ください。</b>',
+            '<b>このドキュメントは翻訳途中です。正確な情報は英語版をご覧ください。</b>',
         backgroundColor: '#21af90',
         textColor: '#000',
         isCloseable: true,
