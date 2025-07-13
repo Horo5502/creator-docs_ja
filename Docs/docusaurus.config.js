@@ -54,6 +54,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [
+        {name: 'robots', content: 'noindex'}
+      ],
       tableOfContents: {
         minHeadingLevel: 2,
         maxHeadingLevel: 5,
